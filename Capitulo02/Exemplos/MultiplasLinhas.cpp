@@ -2,7 +2,9 @@
 #include <locale>
 
 using namespace std;
-
+/*
+    imprimindo uma linha com múltiplas linhas
+*/
 int main()
 {
     // define a localização geográfica

@@ -14,6 +14,7 @@ int main()
     // define a localização geográfica
     setlocale(LC_ALL, "portuguese");
 
+    // ( \n ) = pule para próxima linha
     cout << "Olá,\nMundo\nC++\n";
 
     return 0; // programa terminado com sucesso
