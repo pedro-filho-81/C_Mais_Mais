@@ -28,11 +28,13 @@ int main()
     cin >> raio;
 
     // mostra resultado
-    cout << "CÍRCULO\n";
+    cout << "CiRCULO\n";
     cout << "Raio = " << raio << endl;
-    cout << "Área = " <, area << endl;
-    cout << "Circunferência = " << circunferencia << endl;
-    cout << "Diâmetro = " << diametro << endl;
+    cout << "Area = " << PI * (raio * raio) << endl;
+    cout << "Circunferência = " << raio << endl;
+    cout << "Diâmetro = " << raio * raio << endl;
+    cout << "Perimetro = " << 2 * PI * raio << endl;
+    cout << "Comprimento = " << 2 * PI * raio << endl;
 
     return 0; // programa terminado com sucesso
 
