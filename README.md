@@ -1,2 +1,2 @@
 # C_Mais_Mais
- Exemplos e Exercícios do livro C++ Como Programar
+ O objetivo  deste repositório é mostrar os exemplos do Livro C++ Como Programar dos Deitel e os exercícios que farei durante o aprendizado desta linguagem de programação.
