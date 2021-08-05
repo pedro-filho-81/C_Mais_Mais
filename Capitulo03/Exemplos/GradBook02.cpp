@@ -29,16 +29,16 @@ int main()
     // variável
     string nomeDoCurso; // recebe o usuário o nome do curso
 
-    // cria o objeto da classe grad Book
+    // cria o objeto da classe Grad Book
     GradBook myGradBook;
 
     // entrada de dados
-    cout << "Informe o nome do curso:\n" << endl;
+    cout << "Informe o nome do curso: ";
     getline( cin, nomeDoCurso ); // recebe o nome do curso pelo usuário
 
     // chama a função displayMessage da classe GradBook
     // e mostra a mensagem com o nome do curso
-    myGradBook.
+    myGradBook.displayMessage( nomeDoCurso );
 
     return 0; // programa terminado com sucesso
 
