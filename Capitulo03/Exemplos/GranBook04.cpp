@@ -61,8 +61,13 @@ int main()
     string nomeCurso;
 
     // cria o objeto da classe GradBook
-    GradBook meuGradBook01( "C++ Como Programar. ");
-    GradBook meuGradBook029( "C# How to Program.0" );
+    GradBook meuGradBook01( "C++ Como Programar.");
+    GradBook meuGradBook02( "C# How to Program." );
+
+    // mostra resultado inicial
+    meuGradBook01.displayMessage();
+
+
 
     return 0; // programa terminado com sucesso
 
