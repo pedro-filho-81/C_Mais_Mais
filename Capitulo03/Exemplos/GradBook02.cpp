@@ -5,6 +5,7 @@
 
 #include <iostream>
 #include <locale>
+#include <string>
 
 using namespace std;
 
@@ -12,7 +13,8 @@ using namespace std;
 class GradBook
 {
 public:
-    // cria a função membro displayMessage
+    // cria a função membro displayMessage com o parâmetro
+    // string nomeDoCurso
     void displayMessage( string  nomeDoCurso )
     {
         // mostra a mensagem
@@ -34,9 +36,9 @@ int main()
 
     // entrada de dados
     cout << "Informe o nome do curso: ";
-    getline( cin, nomeDoCurso ); // recebe o nome do curso pelo usuário
+    getline( cin, nomeDoCurso ); // recebe o nome do curso digitado pelo usuário
 
-    // chama a função displayMessage da classe GradBook
+    // chama a função displayMessage da classe GradBook pelo objeto myGradBook
     // e mostra a mensagem com o nome do curso
     myGradBook.displayMessage( nomeDoCurso );
 
