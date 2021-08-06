@@ -66,8 +66,7 @@ int main()
 
     // mostra resultado inicial
     meuGradBook01.displayMessage();
-
-
+    meuGradBook02.displayMessage();
 
     return 0; // programa terminado com sucesso
 
