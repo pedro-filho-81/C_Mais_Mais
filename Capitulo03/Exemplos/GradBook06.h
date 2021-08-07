@@ -9,12 +9,14 @@
 #include <iostream>
 #include <string>
 
-class GradBook
+using namespace std;
+
+class GradBook06
 {
 public:
-    GradBook( string ); // construtor para GradBook06
-    void setGradBook( string ); // cria a função set
-    string getGradBook(); // cria a função get
+    GradBook06( string ); // construtor para GradBook06
+    void setNomeDoCurso( string ); // cria a função set
+    string getNomeDoCurso(); // cria a função get
     void displayMessage(); // cria a função display
 
 private:

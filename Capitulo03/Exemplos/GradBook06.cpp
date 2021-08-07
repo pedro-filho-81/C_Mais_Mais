@@ -13,29 +13,25 @@
 
 using namespace std;
 
-class GradBook
-{
-public:
     // cria construtor
-    GradBook( string nome )
+    GradBook06::GradBook06( string nome )
     {
         setNomeDoCurso( nome );
     } // fim construtor
 
-    void setNomeDoCurso( string nome )
+    void GradBook06::setNomeDoCurso( string nome )
     {
         nomeDoCurso = nome;
     } // fim set
 
     // cria get
-    string getNomeDoCurso()
+    string GradBook06::getNomeDoCurso()
     {
         return nomeDoCurso;
     } // fim get
 
     // cria display
-    void displayMessage()
+    void GradBook06::displayMessage()
     {
         cout << "Bem vindo ao curso: " << getNomeDoCurso() << endl;
     } // fim display
-}; // fim classe
