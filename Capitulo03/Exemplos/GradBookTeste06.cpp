@@ -20,13 +20,13 @@ int main()
     setlocale(LC_ALL, "portuguese");
 
     // cria objeto para classe grad book
-    GradBook06 meuGradBook( "C++ como Programar." );
+    GradBook06 meuGradBook1( "C++ como Programar." );
     GradBook06 meuGradBook2( "C# How to Program" );
 
+    meuGradBook1.displayMessage();
+
     // mostra resultado
-    //meuGradBook1.displayMessage();
-//    cout << "meuGradBook1 criado para: " << meuGradBook1.displayMessage() << endl;
-//    cout << "meuGradBook2 criado para: " << meuGradBook2.displayMessage() << endl;
+    cout << "meuGradBook1 criado para o curso: " << meuGradBook1.getNomeDoCurso() << endl;
 
     return 0; // programa terminado com sucesso
 
