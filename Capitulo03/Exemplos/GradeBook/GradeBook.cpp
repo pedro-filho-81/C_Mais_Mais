@@ -3,7 +3,7 @@
 #include "GradeBook.h"
 
 using namespace std;
-
+// cria construtor
 GradeBook::GradeBook( string nome )
 {
     setGradeBook( nome );
