@@ -44,6 +44,5 @@ int main()
     cout << "minhaConta saldo atual R$" << minhaConta.saldoAtual() << endl;
     cout << "minhaConta2 saldo atual R$" << minhaConta2.saldoAtual() << endl;
 
-    cout << "Hello world!" << endl;
     return 0;
-}
+} // fim main
