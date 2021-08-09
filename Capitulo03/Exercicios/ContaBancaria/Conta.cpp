@@ -1,5 +1,4 @@
 /*
-/*
     3.12 (Classe Account) Crie uma classe chamada Account que um banco poderia
     utilizar para representar contas bancárias dos clientes. Sua  classe deve incluir um
     membro de dados de tipo int para representar o saldo da conta.
@@ -43,7 +42,7 @@ void Conta::setSaldo( int saldo )
         saldoDaConta = saldo;
     } // fim if
 
-    // se saldo menor ou igual a zero
+    // se saldo menor que zero
     if( saldo < 0 )
     {
         // imprime
@@ -57,3 +56,38 @@ int Conta::getSaldo()
     // retorne o valor do slado
     return saldoDaConta;
 } // fim getSaldo
+
+// cria a função crédito para conta
+void Conta::creditoParaConta( int valor )
+{
+    // se valor maior que zero
+    if( valor >= 0 )
+    {
+        // soma o valor ao saldo
+        saldoDaConta += valor;
+    } // fim if
+} // fim função crédito para conta
+
+// cria a função debito na conta
+void Conta::debitoNaConta( int valor )
+{
+    // se o valor menor ou igual a saldoDaConta
+    if( valor <= saldoDaConta )
+    {
+        // subitrai o valor do saldo da conta
+        saldoDaConta -= valor;
+    } // fim if
+
+    // se o valor maior que o saldo da conta
+    if( valor > saldoDaConta )
+    {
+        cout << "Valor Inválido!\n - valor que o saldo da conta." << endl;
+    } // fim if
+} // fim função debito em conta
+
+// cria a função saldo atual
+int Conta::saldoAtual()
+{
+    return saldoDaConta;
+} // fim saldo atual
+
