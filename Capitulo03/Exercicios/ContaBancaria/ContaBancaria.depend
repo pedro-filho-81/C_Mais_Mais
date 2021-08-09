@@ -1,0 +1,12 @@
+# depslib dependency file v1.0
+1628519318 source:c:\users\samsung\documents\github\c_mais_mais\c_mais_mais\capitulo03\exercicios\contabancaria\main.cpp
+	<iostream>
+	"Conta.h"
+
+1628519591 c:\users\samsung\documents\github\c_mais_mais\c_mais_mais\capitulo03\exercicios\contabancaria\conta.h
+	<string>
+
+1628520315 source:c:\users\samsung\documents\github\c_mais_mais\c_mais_mais\capitulo03\exercicios\contabancaria\conta.cpp
+	<iostream>
+	"Conta.h"
+
