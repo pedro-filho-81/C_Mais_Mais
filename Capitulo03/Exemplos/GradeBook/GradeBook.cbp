@@ -33,6 +33,7 @@
 			<Add option="-fexceptions" />
 		</Compiler>
 		<Unit filename="GradeBook.cbp" />
+		<Unit filename="GradeBook.cpp" />
 		<Unit filename="GradeBook.h" />
 		<Unit filename="main.cpp" />
 		<Extensions />
