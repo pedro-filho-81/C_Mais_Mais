@@ -85,3 +85,10 @@ int Fatura::getPreco()
 {
     return precoDoProduto;
 } // fim getPreco
+
+// função para calcular o preço a pagar
+int Fatura::getValorTotal( int quantidade, int preco )
+{
+    // retorna o valor a pagar
+    return quantidade * preco;
+} // fim função get valor total
