@@ -42,6 +42,5 @@ int main()
     cout << "Preço R$ " << minhaFatura1.getPreco() << endl;
     cout << "Total a pagar R$ " << resultado << endl;
 
-
     return 0;
 }  // fim main
