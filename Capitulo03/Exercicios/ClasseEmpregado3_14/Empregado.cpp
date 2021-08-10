@@ -32,13 +32,13 @@ Empregado::Empregado(string nome, string sobrenome, int salario )
 void Empregado::setNome(string nome )
 {
     // se nome menor ou igual a 30 caracteres
-    if( nome.lenght <= 30)
+    if( nome.length() <= 30)
         // variável recebe o nome
         nomeDoEmpregado = nome;
 } // fim função setNome
 
 // função getNome
-string Empregado::getNome();
+string Empregado::getNome()
 {
     return nomeDoEmpregado;
 } // fim função getSobre
@@ -47,8 +47,32 @@ string Empregado::getNome();
 void Empregado::setSobreNome(string sobrenome)
 {
     // se sobrenome menor ou igual a 25
-    if( sobrenome.lemght <= 25 )
+    if( sobrenome.length() <= 25 )
         sobreNome = sobrenome;
 } // fim função get
 
+// função getSobreNome
+string Empregado::getSobreNome()
+{
+    return sobreNome;
+} // fim get
 
+// função setsalario
+void Empregado::setSalario( int sal )
+{
+    // se salário maior ou igual a zero
+    if( sal >= 0 )
+        salario = sal;
+} // fim função get
+
+// função get salário
+int Empregado::getSalario()
+{
+    return salario;
+} // fim função
+
+// função getSalarioAnual( int salario )
+int Empregado::salarioAnual( int salario )
+{
+    return salario * 12;
+} // fim salario anual
