@@ -9,6 +9,7 @@ using namespace std;
 
 int main()
 {
+    // localização geográfica
     setlocale(LC_ALL, "portuguese");
 
     // cria variável
