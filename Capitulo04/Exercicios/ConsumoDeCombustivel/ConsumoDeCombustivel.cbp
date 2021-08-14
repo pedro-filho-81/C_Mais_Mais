@@ -32,6 +32,8 @@
 			<Add option="-Wall" />
 			<Add option="-fexceptions" />
 		</Compiler>
+		<Unit filename="Consumo.cpp" />
+		<Unit filename="Consumo.h" />
 		<Unit filename="main.cpp" />
 		<Extensions />
 	</Project>

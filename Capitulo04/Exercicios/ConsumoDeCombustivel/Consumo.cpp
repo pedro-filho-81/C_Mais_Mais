@@ -16,13 +16,6 @@
 
 using namespace std;
 
-// cria o construtor da classe Consumo
-Consumo::Consumo( float quilometragem, float litros)
-{
-    setQuilometrosRodados( quilometragem ); // recebe e configura a quilometragem
-    setLitrosAbastecidos( litros ); // recebe e configura os litros abastecidos
-} // fim construtor
-
 // cria a função para configurar a variável quilometragem
 void Consumo::setQuilometrosRodados( float valor )
 {
@@ -56,11 +49,12 @@ float Consumo::getLitrosAbastecidos()
 } // fim get
 
 // cria a função consumo
-void Consumo::consumoKmPorLitros(float quantidade, float litros )
+void Consumo::consumoKmPorLitros(double quantidade, double litros )
 {
     // cria a variável
-    float consumo = quantidade / litros;
+    double consumoAtual = quantidade / litros;
 
     // mostra o resultado
-    cout << "Km/litros deste tanque: " << consumo << endl;
+    cout << "Km/litros deste tanque: " << consumoAtual << endl;
+
 } // fim consumo

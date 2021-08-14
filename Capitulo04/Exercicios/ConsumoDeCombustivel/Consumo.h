@@ -10,7 +10,7 @@ public:
     float getQuilometrosRodados(); // obtem os Kms rodados
     void setLitrosAbastecidos( float ); // configura os litros abastecidos
     float getLitrosAbastecidos(); // obtem os litros abastecidos
-    void consumoKmPorLitros( float, float ); // calcula o consumo
+    void consumoKmPorLitros( double, double ); // calcula o consumo
 
 private:
     // cria as variáveis da classe
