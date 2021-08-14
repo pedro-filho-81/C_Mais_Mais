@@ -23,8 +23,6 @@ int main()
     // chama a função determine com o objeto da classe
     meuGradeBook2.determineClassAverage();
 
-    cout << "Hello world!" << endl;
-
     // pausa
     system("pause");
 
