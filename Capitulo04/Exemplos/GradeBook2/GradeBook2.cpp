@@ -48,7 +48,7 @@ string GradeBook2::getCurseName()
 void GradeBook2::displayMessage()
 {
     // imprima
-    cout << "Bem vindo ao curso:\n" << getCurseName() << endl;
+    cout << "\nBem vindo ao curso:\n" << getCurseName() << endl;
 } // fim displayMessage
 
 // função determineClassAverage
@@ -56,7 +56,7 @@ void GradeBook2::determineClassAverage()
 {
     // cria variáveis
     int total = 0; // soma o total das notas digitadas pelo usuário
-    int gradeCounter = 1; // conta o número de notas digitadas
+    int gradeCounter = 0; // conta o número de notas digitadas
     int grade; // recebe as notas lançadas
     double average = 0; // calcula a média das notas
 
@@ -67,9 +67,12 @@ void GradeBook2::determineClassAverage()
     // enquanto nota diferente de -1 faça
     while( grade != -1 )
     {
-        total = total + grade; // soma as notas
-        gradeCounter = gradeCounter + 1; // conta as notas digitadas
-
+        // se nota maior que zero
+        if( grade > 0 )
+        {
+            total = total + grade; // soma as notas
+            gradeCounter = gradeCounter + 1; // conta as notas digitadas
+        } // fim if
 
         // entrada de dados
         cout << "Digite a nota (-1 = sair): ";
@@ -79,20 +82,19 @@ void GradeBook2::determineClassAverage()
 
     // se a contagem das notas for diferente de zero
     if( gradeCounter != 0 )
-        if( gradeCounter > 0)
-        {
-            // média recebe o valor da divisão total pela contagem das notas
-            average = static_cast <double> ( total ) / gradeCounter;
+    {
+        // média recebe o valor da divisão total pela contagem das notas
+        average = static_cast <double> ( total ) / gradeCounter;
 
-            // imprime resultado
-            cout << "\nForam lançadas " << gradeCounter << " notas, valor total " << total << endl;
-            cout << "Média = " << average << endl;
+        // imprime resultado
+        cout << "\nForam lançadas " << gradeCounter << " notas, valor total " << total << endl;
+        cout << "Média = " << average << endl;
 
-        } // fim if
+    } // fim if
     else // se não
     {
         // imprima
-        cout << "Nenhuma nota foi inserida." << endl;
+        cout << "\nNenhuma nota foi inserida." << endl;
     } // fim else
 
 } //  fim função determine
