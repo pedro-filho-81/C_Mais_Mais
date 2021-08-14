@@ -1,3 +1,4 @@
+// cria a classe Consumo
 #include <iostream>
 
 using namespace std;
