@@ -1,3 +1,8 @@
+/*
+    1// Figura 4.18: fig04_18.cpp
+    2// Programa de teste para classe Analysis.
+    Deitel, Harvey; Paul, Harvey. C++ Como Programar (p. 120). Edição do Kindle.
+*/
 #include <iostream>
 #include"Analysis.h"
 
