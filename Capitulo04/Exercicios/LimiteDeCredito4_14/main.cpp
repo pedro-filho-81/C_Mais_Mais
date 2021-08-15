@@ -19,6 +19,10 @@ int main()
     // variáveis
     int conta;
     double saldoInicial;
+    double taxas;
+    double totalDeCredito;
+    double limiteDeCredito;
+    double saldoAtual;
 
     // entrada de dados
     cout << "Entre com o número da conta (-1 = sair): ";
@@ -33,15 +37,29 @@ int main()
             meuLimite.setNumDaConta( conta );
 
             // entrada de dados
-            cout << "Entre com o saldo inicial";
+            cout << "Entre com o saldo inicial: ";
             cin >> saldoInicial;
             meuLimite.setSaldoInicial( saldoInicial );
 
+            cout << "Entre com o total da taxa: ";
+            cin >> taxas;
+            meuLimite.setTotalDaTaxa( taxas );
+
+            cout << "Entre com o total de crédito: ";
+            cin >> totalDeCredito;
+            meuLimite.setTotalDeCredito( totalDeCredito );
+
+            cout << "Entre com o limite de crédito: ";
+            cin >> limiteDeCredito;
+            meuLimite.setLimiteDeCredito(limiteDeCredito);
 
         } // fim if
 
+        // objeto da classe LimiteDaConta chama a função mostraResultado
+        meuLimite.mostraResultado();
+
         // entrada de dados
-        cout << "Entre com o número da conta (-1 = sair): ";
+        cout << "\nEntre com o número da conta (-1 = sair): ";
         cin >> conta; // usuário entra com o número da conta
 
     } // fim while

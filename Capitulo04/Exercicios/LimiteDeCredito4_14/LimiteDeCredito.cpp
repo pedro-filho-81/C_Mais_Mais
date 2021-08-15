@@ -47,7 +47,7 @@ void LimiteDeCredito::setSaldoInicial( double valor ) // configura o saldo inici
 
 double LimiteDeCredito::getSaldoInicial() // retorna o saldo inicial
 {
-    return limiteDeCredito;
+    return saldoInicial;
 } // fim getSaldo
 
 void LimiteDeCredito::setTotalDaTaxa( double valor ) // configura o total da taxa
@@ -71,6 +71,19 @@ void LimiteDeCredito::setTotalDeCredito( double valor ) // configura o total de 
     } // fim if
 } // fim unção get
 
+double LimiteDeCredito::getTotalDeCredito()
+{
+    return totalDeCredito;
+} // fim get
+
+void LimiteDeCredito::setLimiteDeCredito( double valor )
+{
+    if( valor > 0 )
+    {
+        limiteDeCredito = valor;
+    } // fim if
+} // fim função setLimite
+
 double LimiteDeCredito::getLimiteDeCredito() // retorna o valor do limite
 {
     return limiteDeCredito;
@@ -88,3 +101,14 @@ double LimiteDeCredito::getSaldoAtual() // reetorna o saldo atual
 {
     return saldoInicial;
 } // fim get
+
+void LimiteDeCredito::mostraResultado()
+{
+    cout << "\Conta:\t\t\t "<< getNumDaConta() << endl;
+    //cout << "Saldo inicial: " << getSaldoInicial() << endl;
+    //cout << "Taxa: " << getTotalDaTaxa() << endl;
+    //cout << "Total de crédito: " << getTotalDeCredito() << endl;
+    cout << "Limite de crédito:\t" << getLimiteDeCredito() << endl;
+    cout << "Saldo atual:\t\t" << getSaldoAtual() << endl;
+
+} // fim função mostraResultado
