@@ -40,8 +40,10 @@ int LimiteDeCredito::getNumDaConta() // retorna o número da conta configurado
 
 void LimiteDeCredito::setSaldoInicial( double valor ) // configura o saldo inicial
 {
+    // se o valor for maior que zero
     if( valor > 0 )
     {
+        // saldo inicial recebe o valor
         saldoInicial = valor;
     } // fim if
 } // fim saldo
