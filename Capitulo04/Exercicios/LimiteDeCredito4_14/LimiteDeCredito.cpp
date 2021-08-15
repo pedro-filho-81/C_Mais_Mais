@@ -17,6 +17,7 @@
 */
 
 #include <iostream>
+#include <iomanip>
 #include "LimiteDeCredito.h"
 
 using namespace std;
@@ -89,26 +90,80 @@ double LimiteDeCredito::getLimiteDeCredito() // retorna o valor do limite
     return limiteDeCredito;
 } // fim get
 
-void LimiteDeCredito::setSaldoAtual(double valor ) // configura o saldo atual
+void LimiteDeCredito::setSaldoAtual(double valorInicial, double taxa, double credito) // configura o saldo atual
 {
-    if( valor > 0 )
-    {
-        saldoAtual = valor;
-    } // fim if
+    saldoAtual = valorInicial + taxa - credito;
 } // fim função
 
 double LimiteDeCredito::getSaldoAtual() // reetorna o saldo atual
 {
-    return saldoInicial;
+    return saldoAtual;
 } // fim get
 
 void LimiteDeCredito::mostraResultado()
 {
-    cout << "\Conta:\t\t\t "<< getNumDaConta() << endl;
-    //cout << "Saldo inicial: " << getSaldoInicial() << endl;
-    //cout << "Taxa: " << getTotalDaTaxa() << endl;
-    //cout << "Total de crédito: " << getTotalDeCredito() << endl;
-    cout << "Limite de crédito:\t" << getLimiteDeCredito() << endl;
+    cout << "\Conta:\t\t\t"<< getNumDaConta() << endl;
+    cout << "Saldo inicial:\t\t" << setprecision( 2 ) << fixed << getSaldoInicial() << endl;
+    cout << "Taxa:\t\t\t" << getTotalDaTaxa() << "%" << endl;
+    cout << "Total de crédito:\t" << getTotalDeCredito() << endl;
+    cout << "Limite de crédito:\t" <<  getLimiteDeCredito() << endl;
     cout << "Saldo atual:\t\t" << getSaldoAtual() << endl;
 
 } // fim função mostraResultado
+
+// cria função para a entrada de dados pelo usuário
+void LimiteDeCredito::entradaDeDados()
+{
+    // variáveis
+    int conta;
+    double saldoInicial;
+    double taxas;
+    double totalDeCredito;
+    double limiteDeCredito;
+    double saldoAtual;
+
+    // entrada de dados
+    cout << "Entre com o número da conta (-1 = sair): ";
+    cin >> conta; // usuário entra com o número da conta
+
+    // enquanto o número da conta diferente de -1
+    while( conta != -1 )
+    {
+        // se p número da conta maior que zero
+        if( conta > 0 )
+        {
+            // chama a função setNumDaConta que recebe o número da conta
+            setNumDaConta( conta );
+
+            // entrada de dados
+            cout << "Entre com o saldo inicial: ";
+            cin >> saldoInicial;
+            setSaldoInicial( saldoInicial );
+
+            cout << "Entre com o total da taxa: ";
+            cin >> taxas;
+            setTotalDaTaxa( taxas );
+
+            cout << "Entre com o total de crédito: ";
+            cin >> totalDeCredito;
+            setTotalDeCredito( totalDeCredito );
+
+            cout << "Entre com o limite de crédito: ";
+            cin >> limiteDeCredito;
+            setLimiteDeCredito(limiteDeCredito);
+
+            // chama a função setSaldoAtual
+            setSaldoAtual( saldoInicial, taxas, totalDeCredito );
+
+        } // fim if
+
+        // chama a função mostra resultado
+        mostraResultado();
+
+        // entrada de dados
+        cout << "\nEntre com o número da conta (-1 = sair): ";
+        cin >> conta; // usuário entra com o número da conta
+
+    } // fim while
+
+} // fim função entrada de dados

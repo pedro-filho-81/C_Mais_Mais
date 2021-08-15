@@ -22,8 +22,10 @@ public:
     void setLimiteDeCredito( double ); // configura o limite de crédito
     double getLimiteDeCredito(); // retorna o valor do limite
 
-    void setSaldoAtual(double); // configura o saldo atual
+    void setSaldoAtual( double, double, double ); // configura o saldo atual
     double getSaldoAtual(); // retorna o saldo atual
+
+    void entradaDeDados(); // usuário entra com os dados para a classe LimiteDeCredito
 
     void mostraResultado(); // mostar o Resultado
 
