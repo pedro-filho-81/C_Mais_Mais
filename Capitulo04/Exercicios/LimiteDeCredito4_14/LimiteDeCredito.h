@@ -7,5 +7,23 @@ using namespace std;
 class LimiteDeCredito
 {
 public:
-    void setConta( int ); // configura o número da conta
+    void setNumDaConta( int ); // configura o número da conta
+    int getNumDaConta(); // retorna o número da conta configurado
+    void setSaldoInicial( double ); // configura o saldo inicial
+    double getSaldoInicial(); // retorna o saldo inicial
+    void setTotalDaTaxa( double ); // configura o total da taxa
+    double getTotalDaTaxa(); // retorna o total da taxa
+    void setTotalDeCredito( double ); // configura o total de crédito
+    double getLimiteDeCredito(); // retorna o valor do limite
+    void setSaldoAtual(double); // configura o saldo atual
+    double getSaldoAtual(); // reetorna o saldo atual
+
+private:
+    int numeroDaConta;
+    double saldoInicial;
+    double taxas;
+    double totalDeCredito;
+    double limiteDeCredito;
+    double saldoAtual;
+
 }; // fim classe
