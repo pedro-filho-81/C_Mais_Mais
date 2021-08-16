@@ -104,12 +104,22 @@ double LimiteDeCredito::getSaldoAtual() // reetorna o saldo atual
 
 void LimiteDeCredito::mostraResultado()
 {
+    double saldo = getSaldoAtual();
+    double limite = getLimiteDeCredito();
+
     cout << "\Conta:\t\t\t"<< getNumDaConta() << endl;
     cout << "Saldo inicial:\t\t" << setprecision( 2 ) << fixed << getSaldoInicial() << endl;
     cout << "Taxa:\t\t\t" << getTotalDaTaxa() << "%" << endl;
     cout << "Total de crédito:\t" << getTotalDeCredito() << endl;
     cout << "Limite de crédito:\t" <<  getLimiteDeCredito() << endl;
     cout << "Saldo atual:\t\t" << getSaldoAtual() << endl;
+
+    // se saldo atual menor que limite de crédito
+    if( saldo < limite )
+    {
+        // imprima
+        cout << "Limite de crédito ultrapassado!" << endl;
+    } // fim if
 
 } // fim função mostraResultado
 

@@ -16,7 +16,7 @@ int main()
     // cria o objeto da classe Limite de crédito
     LimiteDeCredito meuLimite;
 
-    // com o objeto meuLimte chama a função entradaDeDados
+    // com o objeto meuLimte chamar a função entradaDeDados
     meuLimite.entradaDeDados();
 
     // pausa o programa
