@@ -32,6 +32,8 @@
 			<Add option="-Wall" />
 			<Add option="-fexceptions" />
 		</Compiler>
+		<Unit filename="ComissaoPorVendas.cpp" />
+		<Unit filename="ComissaoPorVida.h" />
 		<Unit filename="main.cpp" />
 		<Extensions />
 	</Project>
