@@ -1,10 +1,14 @@
 #include <iostream>
+#include <locale>
 #include "PagamentoBruto.h"
 
 using namespace std;
 
 int main()
 {
+    // localização geográfica
+    setlocale(LC_ALL, "portuguese" );
+
     // limpa a tela
     system("cls");
 

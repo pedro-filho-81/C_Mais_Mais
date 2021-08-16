@@ -1,13 +1,15 @@
 # depslib dependency file v1.0
-1629124368 source:c:\users\samsung\documents\github\c_mais_mais\c_mais_mais\capitulo04\exercicios\pagamentobruto4_16\main.cpp
-	<iostream>
-	"PagamentoBruto.h"
-
-1629125876 c:\users\samsung\documents\github\c_mais_mais\c_mais_mais\capitulo04\exercicios\pagamentobruto4_16\pagamentobruto.h
-	<iostream>
-
-1629124256 source:c:\users\samsung\documents\github\c_mais_mais\c_mais_mais\capitulo04\exercicios\pagamentobruto4_16\pagamentobruto.cpp
+1629137594 source:c:\users\samsung\documents\github\c_mais_mais\c_mais_mais\capitulo04\exercicios\pagamentobruto4_16\main.cpp
 	<iostream>
 	<locale>
+	"PagamentoBruto.h"
+
+1629138657 c:\users\samsung\documents\github\c_mais_mais\c_mais_mais\capitulo04\exercicios\pagamentobruto4_16\pagamentobruto.h
+	<iostream>
+
+1629137987 source:c:\users\samsung\documents\github\c_mais_mais\c_mais_mais\capitulo04\exercicios\pagamentobruto4_16\pagamentobruto.cpp
+	<iostream>
+	<locale>
+	<iomanip>
 	"PagamentoBruto.h"
 

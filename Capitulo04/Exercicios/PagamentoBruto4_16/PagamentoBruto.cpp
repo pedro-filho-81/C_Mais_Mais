@@ -59,12 +59,25 @@ double PagamentoBruto::getValorDaHora()
 // função para confirura o salário
 void PagamentoBruto::setSalario( double hora, double valor )
 {
+    // variável
+    double horasExtras = 0;
+
     // se valor maior que zero
     if( valor > 0 )
-    {
-        // salário recebe o valor
-        salario = hora * valor;
-    } // fim if
+        // e a hora menor ou igual a 40
+        if( hora <= 40 )
+        {
+            // salário recebe o produto da hora pelo valor
+            salario = hora * valor;
+        } // fim if
+
+        // se a hora for maior que 40
+        else
+        {
+            // salário recebe o valor da hora mais 50% do valor da hora
+            salario =  ( (-40  + hora) * (valor * 50 / 100) ) + ( valor * hora );
+        } // fim else
+
 } // fim função
 
 // função que retorna o salário
@@ -78,43 +91,46 @@ double PagamentoBruto::getSalario()
 void PagamentoBruto::entrarComDados()
 {
     // variáveis
-    int valor;
+    int hora;
     double valorHora;
 
     // imprima
     cout << "Entre com as horas trabalhadas (-1 = sair): ";
-    cin >> valor;
+    cin >> hora;
 
     // enquanto valor diferente de -1
-    while( valor != -1 )
+    while( hora != -1 )
     {
         // se valor maior que 0
-        if( valor > 0 )
+        if( hora > 0 )
         {
-            // função recebe o valor
-            setHorasTrabalhadas( valor );
+            // chama a função setHorasTrabalhados que recebe às horas
+            setHorasTrabalhadas( hora );
 
             // imprima
             cout << "Entre com o valor da hora R$";
             cin >> valorHora; // recebe do usuário o valor da hora
 
-            // chama a função e atribui o valor informado pelo usuário
+            // chama a função setValorDaHora e atribui o valor informado pelo usuário
             setValorDaHora( valorHora );
 
-            // chama a função calcularSalario
+            // chama a função setSalario e atribui à hora e o valor da hora
+            setSalario(hora, valorHora);
+
+            // chama a função calcularSalario que imprime o valor do salário
             calcularSalario();
 
         } // fim if
 
     // imprima
     cout << "\nEntre com as horas trabalhadas (-1 = sair): ";
-    cin >> valor;
+    cin >> hora; // espera a entrada do usuário
 
     } // fim while
 
 } // fim função
 
-// chama a função cal//cula salário
+// chama a função calcula salário e
 void PagamentoBruto::calcularSalario()
 {
     // mostra o valor do salário

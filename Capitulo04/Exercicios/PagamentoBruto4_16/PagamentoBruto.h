@@ -18,8 +18,6 @@ public:
 
     void entrarComDados(); // entrada de dados pelo usuário
 
-    void mostrarResultado(); // mostar
-
     void calcularSalario(); // calcula o valor do salário
 
 private:
