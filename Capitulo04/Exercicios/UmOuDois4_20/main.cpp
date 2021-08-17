@@ -36,30 +36,31 @@ int main()
         if( numero == 1 )
             aprovados++; // incrementa aprovados
 
-        if( numero == 2 )
+        if( numero == 2 ) // se número igual a 2
             reprovados++; // incrementa reprovados
 
         // incrementa contador
         contador++;
 
-        if( contador > 1 )
-            if( numero < 1 )
+        if( contador > 1 ) // se contador maior que 1
+            if( numero < 1 ) // e numero menor que 1
                 contador--; // decrementa contador
 
-        if( contador > 1 )
-            if( numero > 2 )
+        if( contador > 1 ) // se contador maior que 1
+            if( numero > 2 ) // e numero maior que 2
                 contador--; // decrementa contador
 
-        if( contador == 1)
-            if( numero < 1 )
-                contador = 0;
+        if( contador == 1) // se contador igual a 1
+            if( numero < 1 ) // e numero menor que 1
+                contador = 0; // contador recebe zero
 
-        if( contador == 1)
-            if( numero > 2 )
-                    contador = 0;
+        if( contador == 1) // se contador igual a 1
+            if( numero > 2 ) // e numero maior que 2
+                    contador = 0; // contador recebe zero
 
     } // fim while contador
 
+    // mostra resultado
     cout << "\nForam cadastrados " << contador - 1 << " Alunos." << endl;
     cout << "Aprovados: " << aprovados << "\nReprovados: " << reprovados << endl;
 
