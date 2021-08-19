@@ -23,6 +23,8 @@ int main()
 
     // variável
     int linha = 0;
+    int ultimaLinha = 0;
+    int meio = 0;
     int vazio = 0;
     int tamanho;
 
@@ -32,14 +34,49 @@ int main()
 
     // PRIMEIRA LINHA
     // enquanto contar menor ou igual a tamanho
-    while( linha <= tamanho )
+    while( linha < tamanho )
     {
         // imprime uma linha
-        cout << "*";
+        cout << "* ";
         linha++; // incrementa contar
+    } // fim while linha superior
+
+    // pula linha
+    cout << endl;
+
+    // MEIO DO QUADRADO
+    while( meio < tamanho - 2 )
+    {
+        // coluna esquerda
+        cout << "*";
+
+        // espaço vazio
+        while( vazio < tamanho - 2 )
+        {
+            cout << "  ";
+            vazio++;
+
+        } // fim espaço vazio
+
+        vazio = 0; // zera vazio
+
+        // último asterisco
+        cout << " *" << endl;
+        meio++;
+
+    } // FIM WHILE MEIO DO QUADRADO
+
+    // ÚLTIMA LINHA
+    // enquanto contar menor ou igual a tamanho
+    while( ultimaLinha < tamanho )
+    {
+        // imprime uma linha
+        cout << "* ";
+        ultimaLinha++; // incrementa contar
     } // fim while
 
-    while()
+    // pula linha
+    cout << endl;
 
     system("pause"); // pausa do programa
 
