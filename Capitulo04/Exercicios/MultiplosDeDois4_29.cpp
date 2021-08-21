@@ -22,6 +22,7 @@ int main()
     // limpa a tela
     system("cls");
 
+    // imprime um valor até o limite do tipo, testado com a variável de tipo ( int, float e double )
     double multiplos = 2;
 
     // loop infinito
