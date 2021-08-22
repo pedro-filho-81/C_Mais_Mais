@@ -5,6 +5,8 @@
     1 (para valores de n maiores que 1)  e  n! = 1 (para n = 0 ou n = 1).
     Por exemplo, 5! = 5 · 4 · 3 · 2 · 1, que é 120.
     Utilize instruções while em cada um dos seguintes:
+    a) Escreva um programa que lê um inteiro não negativo e calcula e imprime seu fatorial.
+    Deitel, Harvey; Paul, Harvey. C++ Como Programar (p. 139). Edição do Kindle.
     Deitel, Harvey; Paul, Harvey. C++ Como Programar (p. 138). Edição do Kindle.
     Autor: Pedro Filho, 22/08/2021
 */
