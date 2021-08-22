@@ -34,7 +34,6 @@ int main()
     int novoNumero = 0;
     int n1, n2,n3,n4;
     int cripto1, cripto2, cripto3, cripto4;
-    int des1, des2, des3, des4;
 
     // entrada de dados
     cout << "Digite um número de 4 digitos: ";
@@ -46,7 +45,7 @@ int main()
     n3 = numero % 100 / 10;
     n4 = numero % 10 / 1;
 
-    // encriptação
+    // criptografia
     cripto1 = ( n1 + 7 ) % 10;
     cripto2 = ( n2 + 7 ) % 10;
     cripto3 = ( n3 + 7 ) % 10;
@@ -58,9 +57,12 @@ int main()
     // mostra digitos
     cout << "Número: ";
     cout << n1 << " " << n2 << " " << n3 << " " << n4 <<  endl;
+
     cout << "Criptografia: ";
     cout << cripto3 << " " << cripto4 << " " << cripto1 << " " << cripto2 << endl;
+
     cout << "Novo número = " << novoNumero << endl;
+    cout << endl;
 
     system("pause"); // pausa do programa
 
