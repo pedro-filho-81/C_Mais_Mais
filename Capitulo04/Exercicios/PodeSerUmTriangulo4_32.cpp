@@ -38,7 +38,9 @@ int main()
             cout << "Fòrmula: (b - c) < a < (b + c)" << endl;
             cout << ladoB << " - " << ladoC << " < " << ladoA << " < " << ladoB << " + " << ladoC << endl;
             cout << ( ladoB - ladoC ) << " < " << ladoA << " < " << (ladoB + ladoC ) << endl;
+
             cout << endl;
+
             cout << "Fòrmula: (a - c) < b < (a + c)" << endl;
             cout << ladoA << " - " << ladoC << " < " << ladoB << " < " << ladoA << " + " << ladoC << endl;
             cout << ( ladoA - ladoC ) << " < " << ladoB << " < " << (ladoA + ladoC ) << endl;

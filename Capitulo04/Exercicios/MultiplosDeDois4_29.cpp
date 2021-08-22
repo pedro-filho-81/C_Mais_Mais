@@ -23,7 +23,7 @@ int main()
     system("cls");
 
     // imprime um valor até o limite do tipo, testado com a variável de tipo ( int, float e double )
-    double multiplos = 2;
+    double multiplos = 2; // cria a variável
 
     // loop infinito
     while( true )
