@@ -18,6 +18,12 @@ int main()
     // limpa a tela
     system("cls");
 
+    // cria o objeto da classe GradeBook
+    GradeBook meuGradeBook("Livro C++ como programar dos Deitel" );
+
+    //mostra a mensagem de boas-vindas
+    meuGradeBook.displayMessage();
+
     cout << "Hello world!" << endl;
 
     // pausa o programa
