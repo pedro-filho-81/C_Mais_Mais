@@ -65,10 +65,10 @@ void GradeBook::inputGrades()
     int grade;
 
     // entrada de dados
-    cout << "Entre com a letra da nota : ";
+    cout << "Entre com a letra da nota : " << endl;
 
     // enquanto usuário não digitar a tecla ctrl z
-    while( grade = cin.get() != EOF )
+    while( ( grade = cin.get() ) != EOF )
     {
         // determina que nota foi inserida
         switch( grade )
@@ -96,6 +96,11 @@ void GradeBook::inputGrades()
             case 'F':
             case 'f':
                 fCount++;
+                break;
+
+            case '\n':
+            case '\t':
+            case ' ':
                 break;
 
             default:

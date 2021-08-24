@@ -24,6 +24,12 @@ int main()
     //mostra a mensagem de boas-vindas
     meuGradeBook.displayMessage();
 
+    // lê as notas fornecidas pelo usuário
+    meuGradeBook.inputGrades();
+
+    // mostra  o relatório das notas lançadas
+    meuGradeBook.displayGradeReport();
+
     cout << "Hello world!" << endl;
 
     // pausa o programa
