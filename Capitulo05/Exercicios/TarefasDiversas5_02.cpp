@@ -53,12 +53,18 @@ int main()
             // soma o valor
             soma += contar;
             // imprime o valor
-            cout << contar << " ";
+            cout << setw( 3 ) << contar << " ";
+
         } // fim if
+
+        // se contar % 10 == 0
+        if( contar % 10 == 0 )
+            cout << endl; // pula linha
+
     } // fim for
 
     // mostra a soma
-    cout << "soma = " << soma << endl;
+    cout << "\nsoma = " << soma << endl;
 
     /*
         b) Imprimir o valor 333.546372 em uma largura de campo de 15 caracteres com
@@ -99,6 +105,27 @@ int main()
         x++;
 
     } // fim while
+
+    /*
+        e) Repetir o Exercício 5.2 (d) utilizando uma instrução for.
+    */
+
+    // cabeçalho
+    cout << "\nE) " << endl;
+
+    // loop for de 1 até 20
+    for( contar = 1; contar <= 20; contar++ )
+    {
+        // imprime
+        cout << setw( 3 ) << contar << " ";
+
+        // se contar % 5 == 0
+        if( contar % 5 == 0 )
+        {
+            // pula uma linha
+            cout << endl;
+        } // fim if
+    } // fim for
 
     // pula linha
     cout << endl;
