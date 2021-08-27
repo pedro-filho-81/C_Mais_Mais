@@ -125,6 +125,7 @@ int main()
             // pula uma linha
             cout << endl;
         } // fim if
+
     } // fim for
 
     // pula linha
