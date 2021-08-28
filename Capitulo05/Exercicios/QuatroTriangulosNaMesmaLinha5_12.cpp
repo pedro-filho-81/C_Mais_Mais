@@ -38,7 +38,7 @@ int main()
     */
 
     // cabeçalho
-    cout << "TrianguloA: " << " TrianguloB: " << endl;
+    cout << "TriânguloA: " << " TriânguloB: " << "   TriânguloC: " << "   TriânguloD: " << endl;
 
     // cria loop linha para os triângulos
     for( int linha = 1; linha <= 10; linha++ )
@@ -50,15 +50,42 @@ int main()
             cout << '*';
         } // fim for primeiro triângulo
 
-                // cria 13 espaços em branco
-                cout << setw(13);
+        // cria 13 espaços em branco
+        cout << setw(13);
 
-                // cria o segundo triângulo
-                for( int segundo = linha; segundo <= 10; segundo++ )
-                {
-                    // imprime asterisco
-                    cout << '*';
-                } // fim for segundo triângulo
+        // cria o segundo triângulo
+        for( int segundo = linha; segundo <= 10; segundo++ )
+        {
+            // imprime asterisco
+            cout << '*';
+        } // fim for segundo triângulo
+
+        // cria 5 espaços em branco
+        cout << setw( 5 );
+
+        // cria o terceiro triângulo
+        for( int terceiro = linha; terceiro <= 10; terceiro++ )
+        {
+            // imprime espaços vazios
+            cout << ' ';
+        } // fim for terceiro triângulo
+
+        // quarto triângulo
+        for( int quarto = 1; quarto <= linha; quarto++ )
+        {
+            // imprime asterisco
+            cout << '*';
+        } // fim for quarto triângulo
+
+        // 5 espaços em branco
+        cout << setw( 6 );
+
+        // quinto triângulo
+        for( int quinto = linha; quinto <= 10; quinto++ )
+        {
+            // imprime
+            cout << '*';
+        } // fim for quinto triângulo
 
         // pula linha
         cout << endl;
