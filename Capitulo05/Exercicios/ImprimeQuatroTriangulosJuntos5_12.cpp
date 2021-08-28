@@ -26,6 +26,88 @@ int main()
     // limpa a tela
     system("cls");
 
+    // primeiro triângulo
+    cout << "Triângulo A:" << endl;
+
+    // loop para linha
+    for( int linha = 1; linha <= 10; linha++ )
+    {
+        // loop para a coluna
+        for( int coluna = 1; coluna <= linha; coluna++ )
+        {
+            // imprime o asterisco e um espaço em branco
+            cout << '*';
+        } // fim for coluna
+
+        // pula uma linha
+        cout << endl;
+    } // fim for linha
+
+    // segundo triângulo
+    cout << "Triângulo B:" << endl;
+
+    // loop para linha
+    for( int linha = 1; linha <= 10; linha++ )
+    {
+        // loop para a coluna
+        for( int coluna = linha; coluna <= 10; coluna++ )
+        {
+            // imprime o asterisco e um espaço em branco
+            cout << '*';
+        } // fim for coluna
+
+        // pula uma linha
+        cout << endl;
+    } // fim for linha
+
+    // terceiro triângulo
+    cout << "Triângulo C:" << endl;
+
+    // loop para linha
+    for( int linha = 1; linha <= 10; linha++ )
+    {
+        // loop para a coluna
+        for( int espacos = 1; espacos <= linha; espacos++ )
+        {
+            // imprime espaços em branco
+            cout << ' ';
+        } // fim for espaços em branco
+
+        // loop para o asterisco
+        for( int asterisco = linha; asterisco <= 10; asterisco++ )
+        {
+            // imprime asterisco
+            cout << '*';
+        } // fim for asterisco
+
+        // pula uma linha
+        cout << endl;
+    } // fim for linha
+
+    // quarto triângulo
+    cout << "Triângulo D:" << endl;
+
+    // loop para linha
+    for( int linha = 1; linha <= 10; linha++ )
+    {
+        // loop para a coluna
+        for( int espacos = linha; espacos <= 10; espacos++ )
+        {
+            // imprime espaços em branco
+            cout << ' ';
+        } // fim for espaços em branco
+
+        // loop para o asterisco
+        for( int asterisco = 1; asterisco <= linha; asterisco++ )
+        {
+            // imprime asterisco
+            cout << '*';
+        } // fim for asterisco
+
+        // pula uma linha
+        cout << endl;
+    } // fim for linha
+
     // pula linha
     cout << endl;
 
