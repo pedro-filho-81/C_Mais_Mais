@@ -1,7 +1,9 @@
 /*
     5.10 A função fatorial é freqüentemente utilizada em problemas de probabilidade.
     Utilizando a definição de fatorial no Exercício 4.35, escreva  um programa que
-    utiliza uma instrução for para avaliar o fatorial dos inteiros de 1 a 5. Imprima os resultados no formato de tabela. Que  dificuldade poderia impedir você de calcular o fatorial de 20?
+    utiliza uma instrução for para avaliar o fatorial dos inteiros de 1 a 5. Imprima os
+    resultados no formato de tabela. Que  dificuldade poderia impedir você de calcular
+    o fatorial de 20?
     Deitel, Harvey; Paul, Harvey. C++ Como Programar (p. 178). Edição do Kindle.
     Autor: Pedro Filho, 28/08/2021
 */
