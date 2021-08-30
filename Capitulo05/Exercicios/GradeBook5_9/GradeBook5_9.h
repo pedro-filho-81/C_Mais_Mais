@@ -27,4 +27,8 @@ private:
     int cCount; // contas as notas C
     int dCount; // contas as notas D
     int fCount; // contas as notas F
-};
+    int totalDasNotas;
+    int totalDePontos;
+    float mediaDePontos;
+
+}; // fim classe GradeBook
