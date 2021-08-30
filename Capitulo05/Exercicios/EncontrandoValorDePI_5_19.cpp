@@ -27,8 +27,8 @@ int main()
     // variáveis
     float pi = 0.0;
 
-    // configura o ponto flutuante com 10 digitos
-    cout << fixed << setprecision(15) << endl;
+    // configura o ponto flutuante com 5 digitos
+    cout << fixed << setprecision( 8 ) << endl;
 
     // loop for para achar o pi
     for( int n = 0; n < 1000; n++ )
@@ -36,8 +36,14 @@ int main()
         // formula de Leibniz
         pi += pow( -1, n ) / ( 2 * n + 1 ) ;
 
+        // se n %5 igual a zero
+        if( n % 5 == 0 )
+        {
+            cout << endl; // pula linha
+        }
+
         // imprime o resultado
-        cout << n << " " << "PI = " << pi * 4 << endl;
+        cout << setw(  5 ) << n << " " << "PI = " << setw( 11 ) << pi * 4;
     } // fim for
 
     // pula linha
