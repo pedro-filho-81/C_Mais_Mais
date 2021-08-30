@@ -18,6 +18,9 @@ int main()
     // limpa a tela
     system("cls");
 
+    // cabeçalho
+    cout << "GRADEBOOK 5_9" << endl;
+
     // cria o objeto da classe GradeBook
     GradeBook meuGradeBook("Livro C++ como programar dos Deitel" );
 
@@ -30,7 +33,7 @@ int main()
     // mostra  o relatório das notas lançadas
     meuGradeBook.displayGradeReport();
 
-    cout << "Hello world!" << endl;
+    cout << endl; // pula linha
 
     // pausa o programa
     system("pause");

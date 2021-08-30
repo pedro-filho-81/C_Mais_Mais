@@ -38,8 +38,8 @@ void GradeBook::setCourseName( string name )
         courseName = name.substr( 0, 25 );
 
         // imprime o aviso
-        cout << "O nome do curso: \" " << name << " \" \nExcede o número de 25 caracteres."
-        << "\nO nome do curso está limitado aos primeiros 25 caracteres." << endl;
+        cout << "\nO nome do curso: \" " << name << " \" \nExcede o número de 25 caracteres."
+        << "\n\nO nome do curso está limitado aos primeiros 25 caracteres." << endl;
     } // fim else if
 
 } // fim setCourseNome
@@ -55,7 +55,7 @@ string GradeBook::getCourseName()
 void GradeBook::displayMessage()
 {
     // chama a função getCourseName e imprima a mensagem de boas vindas
-    cout << "Bem vindo ao curso: " << getCourseName() << "!\n" << endl;
+    cout << "\nBem vindo ao curso:\n" << getCourseName() << "!\n" << endl;
 } // fim displayMessage
 
 // cria a função imput notas
@@ -65,7 +65,7 @@ void GradeBook::inputGrades()
     int grade;
 
     // entrada de dados
-    cout << "Entre com a letra da nota : " << endl;
+    cout << "\nEntre com a letra ( A-a, B-b,C-c,D-d ou F-f) para nota : " << endl;
 
     // enquanto usuário não digitar a tecla ctrl z
     while( ( grade = cin.get() ) != EOF )
