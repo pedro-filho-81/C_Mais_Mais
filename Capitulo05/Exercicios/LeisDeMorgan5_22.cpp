@@ -36,7 +36,9 @@ int main()
 
     // mostra resultado
     cout << "int x = 3, y = 7;" << endl;
-    cout << "Dada a expressão a) !( x < 5) && !( y >= 7)\nequivale a !( x < 5 && y >= 7 )";
+    cout << "Dada a expressão a) !( x < 5) && !( y >= 7)\nequivale a !( x < 5 && y >= 7 ) = ";
+
+    // condição
     if( ( !( x < 5) && !( y >= 7) )  == !( x < 5 && y >= 7 ) )
     {
         // imprima
@@ -45,8 +47,12 @@ int main()
 
     // b) !( a == b) || !( g != 5)
     int a = 5, b = a, g = 4;
+
+    // imprima
     cout << "\nint a = 5, b = a, g = 4;" << endl;
     cout << "Dado a expresão b) !( a == b) || !( g != 5)\nequivale a !( a == b && g != 5) = ";
+
+    // condição
     if(!( a == b) || !( g != 5) == !( a == b && g != 5) )
     {
         cout << "verdade" << endl;
@@ -55,11 +61,43 @@ int main()
     {
         cout << "falso" << endl;
     }
-    /*
-    c) !( (x <= 8) && (y > 4))
-    d) !( (i > 4) || (j <= 6))
-      */
 
+    // c) !( (x <= 8) && (y > 4))
+    x = 5;
+    y = 3;
+
+    // imprime
+    cout << "\nint x = 5, y = 3;" << endl;
+    cout << "Dada a expressão c) !( (x <= 8) && (y > 4))\nequivale a ( !(x <= 8) || !(y > 4)) ";
+
+    // condição
+    if( !( (x <= 8) && (y > 4)) == ( !(x <= 8) || !(y > 4)) )
+    {
+        cout << "Verdade" << endl;
+    }
+    else
+    {
+        cout << "Falso" << endl;
+    }
+
+
+    // d) !( (i > 4) || (j <= 6))
+    // variáveis
+    int i = 5, j = 3;
+
+    // imprime
+    cout << "\nint i = 5, j = 3;" << endl;
+    cout << "Dado a expressão d) !( (i > 4) || (j <= 6))\nequivale a ( !(i > 4) && !(j <= 6)) = ";
+
+    // condição
+    if( !( (i > 4) || (j <= 6)) == ( !(i > 4) && !(j <= 6) ) )
+    {
+        cout << "Verdade" << endl;
+    }
+    else
+    {
+        cout << "Falso" << endl;
+    }
 
     // pula linha
     cout << endl;
