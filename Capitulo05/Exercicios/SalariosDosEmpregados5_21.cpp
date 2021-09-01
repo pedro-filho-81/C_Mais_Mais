@@ -37,9 +37,17 @@ int main()
 
     // cria variáveis
     int horasTrabalhadas = 0;
-    int valorHorasTrabalhadas = 0;
+    int valorHoras = 0;
     int horasExtras = 0;
     int codigo = 0;
+    float salarioGerente = 0;
+    float horista = 0;
+    float valorDasVendas = 0;
+    float comissionado = 0;
+    int quantidade = 0;
+    float valorDoProduto = 0;
+    float produtor = 0;
+    int sentinela = 0;
 
     // cria constante
     const float salarioComissao = 250.00;
@@ -52,23 +60,90 @@ int main()
     cout << "*    2                     Horista         *" << endl;
     cout << "*    3                     Comissionado    *" << endl;
     cout << "*    4                     Produção        *" << endl;
-    cout << "*    5                     Sair            *" << endl;
     cout << "********************************************" << endl;
 
     // entrada de dados
-    cout << "Digite o código da profisão: ";
+    cout << "Digite o código da profisão ( -1 = sair ): ";
     cin >> codigo; // aguarda entrada do usuário
 
-    // switch
-    switch( codigo )
+    // enquanto codigo diferente de -1 faça
+    while ( codigo != -1 )
     {
-        case 5:
-            break;
+        // switch depende da tecla
+        switch( codigo )
+        {
+            case 1:
+                // entrada de dados
+                cout << "\nInforme o valor do salário do gerente R$";
+                cin >> salarioGerente;
+                break;
 
-        default:
-            cout << "Valor errado!" << endl;
+            case 2:
+                // entrada de dados
+                cout << "\nDigite as horas trabalhadas: ";
+                cin >> horasTrabalhadas;
 
-    } // fim switch código
+                cout << "Digite o valor das horas trabalhadas R$";
+                cin >> valorHoras;
+
+                // se o valor das horas maior que 40
+                if( horasTrabalhadas > 40 )
+                {
+                    // horas extras recebe o valor das extras
+                    horasExtras = ( horasTrabalhadas - 40 ) * ( valorHoras / 2 );
+                } // fim if
+
+                // horista recebe
+                horista = ( valorHoras * horasTrabalhadas ) + horasExtras;
+
+                break; // saia do programa
+
+            case 3:
+                // entrada de dados
+                cout << "\nDigite o valor das vendas R$";
+                cin >> valorDasVendas;
+
+                // calcula salário comissionado
+                comissionado = salarioComissao + ( valorDasVendas * ( 5.7 / 100 ) );
+
+                // sair do programa
+                break;
+
+            case 4:
+                // entrada de dados
+                cout << "\nInforme a quantidade do produto produzido: ";
+                cin >> quantidade;
+
+                cout << "Invorme o valor do proguro R$";
+                cin >> valorDoProduto;
+
+                // calcula o salário do produtor
+                produtor = quantidade * valorDoProduto;
+
+                // sai do programa
+                break;
+
+            case 5:
+                break;
+
+            default:
+                cout << "Valor errado!" << endl;
+
+        } // fim switch código
+
+    // entrada de dados
+    cout << "Digite o código da profisão ( -1 = sair ): ";
+    cin >> codigo; // aguarda entrada do usuário
+
+    } // FIM WHILE
+
+    // mostra resultado
+    cout << "\nSALÁRIO SEMANAL DOS FUNCIONÁRIOS DA LOJA";
+    cout << fixed << setprecision( 2 ) << endl; // configura valores com 2 digitos decimais
+    cout << "Salário do gerente R$" << salarioGerente << endl;
+    cout << "Salário do horista R$" << horista << endl;
+    cout << "Salário do comissionado R$" << comissionado << endl;
+    cout << "Salário do produtor R$" << produtor << endl;
 
     // pula linha
     cout << endl;
