@@ -123,9 +123,6 @@ int main()
                 // sai do programa
                 break;
 
-            case 5:
-                break;
-
             default:
                 cout << "Valor errado!" << endl;
 
