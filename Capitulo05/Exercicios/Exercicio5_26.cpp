@@ -20,20 +20,25 @@ int main()
     // limpa a tela
     system("cls");
 
-
     // loop for
     for( int i = 1; i <= 5; i++ )
     {
+        // loop for para controlar o outro loop for
         for( int j = 1; j <= 3; j++ )
         {
+            // loop for para desenhar uma linha de asterisco de 4 caracteres
             for( int k = 1; k <= 4; k++ )
-                //imprima
+                // imprime 4 asterisco
                 cout << '*';
 
+            // pula uma linha
             cout << endl;
-        } // fim for
+        } // fim segundo for
+
+        // pula uma linha
         cout << endl;
-    } // fim for
+
+    } // fim primeiro for
 
     // pula linha
     cout << endl;
