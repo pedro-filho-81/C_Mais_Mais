@@ -1,5 +1,7 @@
 /*
-
+    1// Figura 6.5: fig06_05.cpp
+    2// Cria o objeto GradeBook, insere notas e exibe relatório de notas.
+    Deitel, Harvey; Paul, Harvey. C++ Como Programar (p. 187). Edição do Kindle.
 */
 
 #include <iostream>
@@ -16,8 +18,17 @@ int main()
     // limpa a tela
     system("cls");
 
-    // variáveis
+    // cria o objeto da classe grade book
+    GradeBook meuGradeBook( "Livro C++ como programar dos Deitel" );
 
+    // exibe mensagens de boas vindas
+    meuGradeBook.displayMessage();
+
+    // adicionando às notas
+    meuGradeBook.inputGrades();
+
+    // mostra o maior valor das 3 notas
+    meuGradeBook.dysplayGradeReport();
 
     // pula uma linha
     cout << endl;

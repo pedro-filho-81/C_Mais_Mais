@@ -38,8 +38,8 @@ void GradeBook::setCourseName( string name )
         courseName = name.substr( 0, 25 );
 
         // imprima
-        cout << "Name \" " << name << "\" Excede o tamanho de 25 caracteres\n"
-                << "Nome do curso limitado aos 25 caracteres iniciais:\n"
+        cout << "Name\" " << name << "\"\nExcede o tamanho de 25 caracteres\n"
+                << "\nNome do curso limitado aos 25 caracteres iniciais:\n"
                 << name << endl;
     } // fim else
 
@@ -97,3 +97,10 @@ int GradeBook::maximum( int x, int y, int z )
     return maximumValue;
 
 } // fim função maximum
+
+// cria a função gradeReport
+void GradeBook::dysplayGradeReport()
+{
+    // imprime o maior valor da três notas
+    cout << "O maior valor é " << studentMaximum << endl;
+} // fim função dysplayGradeReport
