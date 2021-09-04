@@ -73,6 +73,8 @@ int main()
 
     // cabeçalho
     cout << "Face" << setw(15) << "Frequência" << endl;
+
+    // imprime o resultado
     cout << "    1" << setw( 13) << frequency1
             << "\n    2" << setw( 13 ) << frequency2
             << "\n    3" << setw( 13 ) << frequency3
