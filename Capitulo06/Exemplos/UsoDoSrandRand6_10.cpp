@@ -39,7 +39,7 @@ int main()
         cout << setw( 5 ) << ( 1 + rand() % 6 );
 
         // se i multiplo de 5
-        if( i % 5 == 0 )
+        if( i % 50 == 0 )
             // pule uma linha
             cout << endl;
 
