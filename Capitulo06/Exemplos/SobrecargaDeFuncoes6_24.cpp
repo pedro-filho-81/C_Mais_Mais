@@ -14,6 +14,8 @@ using namespace std;
 // cria a função quadrado com inteiros
 int quadrado( int x )
 {
+    // inorime
+    cout << "O quadrado de " << x << " é ";
     // retorna x
     return x * x;
 } // fim função quadrado
@@ -21,6 +23,8 @@ int quadrado( int x )
 // cria a função quadrado com double
 double quadrado( double y )
 {
+    // imprima
+    cout << "O quadrado de " << y << " é ";
     // retorna o quadrado
     return y * y;
 } // fim função quadrado
@@ -38,11 +42,9 @@ int main()
     // cabeçalho
     cout << "SOBRECARGA DE FUNÇÃO" << endl;
 
-    // imprime o quadrado do número inteiro
-    cout << "O quadrado de 7 é " << quadrado( 7 ) << endl;
+    cout << quadrado( 7 ) << endl;
 
-    // imprime o quadrado do número real
-    cout << "O quadrado de 7,5 é " << quadrado( 7.5 ) << endl;
+    cout << quadrado( 7.5 ) << endl;
 
     // pula linha
     cout << endl;
