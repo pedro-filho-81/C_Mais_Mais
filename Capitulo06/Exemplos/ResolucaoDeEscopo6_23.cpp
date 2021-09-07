@@ -30,7 +30,7 @@ int main()
     cout << "Chama avariável local de nome número = " << numero << endl;
 
     // imprime e chama a variável global número usando o operador unaria
-    cout << "Chama a variável global número usando o operador unário (::) número "
+    cout << "Chama a variável global número usando o operador unário (::) número = "
                 << ::numero << endl;
 
     // pula linha
