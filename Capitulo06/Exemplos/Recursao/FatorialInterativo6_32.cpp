@@ -27,7 +27,7 @@ int main()
     cout << "FATORIAL INTERATIVO" << endl;
 
     // loop for para calcular o fatorial de 0 a 10
-    for( int counter = 1; counter <= 10; counter++ )
+    for( int counter = 0; counter <= 10; counter++ )
         // imprime o resultado
         cout << setw( 2 ) << counter << "! = " << fatorial( counter ) << endl;
 
