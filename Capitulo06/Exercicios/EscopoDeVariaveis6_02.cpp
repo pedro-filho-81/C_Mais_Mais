@@ -31,9 +31,9 @@ int main()
     system("cls");
 
     // variável
-    int x;
+    int x; // escopo de bloco
 
-    // cabeçaçlho
+    // cabeçalho
     cout << " CUBO DOS NÚMEROS" << endl;
     cout << "******************" << endl;
     cout << "Número" << setw(10) << "Cubo" << endl;
@@ -53,6 +53,7 @@ int main()
 } // fim main
 
 // cria a função cube
+// y = escopo de função
 int cube( int y )
 {
     // retorne o cube de y
