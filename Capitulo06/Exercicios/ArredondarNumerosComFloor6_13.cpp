@@ -72,7 +72,7 @@ int main()
         roundToThousandths( x );
 
         // entrada da resposta
-        cout << "Digite qualquer tecla para continuar (-1 = sair)? ";
+        cout << "Digite qualquer tecla para continuar (-1 = sair): ";
         cin >> resposta;
 
         // limpa a tela
@@ -112,7 +112,7 @@ void roundToTenths( int number)
 
     // variáveis
     float mudar = number / 3.14159;
-    float y = floor( mudar * 10 + .5 ) / 10; // arredonda y com uma casa decimal
+    float y = floor( mudar * 10 + .5 ) / 10; // arredonda y com uma casa
 
     // mostra o resultado
     cout << "Você digitou " << number << " mudado para " << mudar
@@ -125,7 +125,7 @@ void roundToHundredths( int number)
 
     // variáveis
     float mudar = number / 3.14159;
-    float y = floor( mudar * 100 + .5 ) / 100; // arredonda y com duas casa decimal
+    float y = floor( mudar * 100 + .5 ) / 100; // arredonda y com duas casa
 
     // mostra o resultado
     cout << "Você digitou " << number << " mudado para " << mudar
@@ -138,7 +138,7 @@ void roundToThousandths( int number)
 
     // variáveis
     float mudar = number / 3.14159;
-    float y = floor( mudar * 1000 + .5 ) / 1000; // arredonda y com uma casa decimal
+    float y = floor( mudar * 1000 + .5 ) / 1000; // arredonda y com três casas
 
     // mostra o resultado
     cout << "Você digitou " << number << " mudado para " << mudar
