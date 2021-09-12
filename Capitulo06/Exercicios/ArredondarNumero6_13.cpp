@@ -38,7 +38,7 @@ int main()
     srand( time( NULL) );
 
     // cabeçalho
-    cout << "AREDONDANDO NÚMEROS" << endl;
+    cout << "ARREDONDANDO NÚMEROS" << endl;
 
     // loop para gera valor aleatório
     for( int i = 1; i <= 20; i++ )
