@@ -57,7 +57,7 @@ int main()
         x = 1 + rand() % 50;
 
         // cabeçalho
-        cout << "ARREDONDANDO NÚMEROS" << endl;
+        cout << "ARREDONDANDO NÚMEROS com FLOOR() " << endl;
 
         // chama a função roundtoInteger
         roundToInteger( x );
@@ -102,7 +102,7 @@ void roundToInteger( int number )
     float y = floor( mudar + .5 ); // arredonda y
 
     // mostra o resultado
-    cout << "Você digitou " << number << " mudado para " << mudar
+    cout << "Você digitou " << number << " / 3,14159 = " << mudar
             << "\nque foi arredondado para " << y << endl;
 } // fim função roundToInteger
 
@@ -115,7 +115,7 @@ void roundToTenths( int number)
     float y = floor( mudar * 10 + .5 ) / 10; // arredonda y com uma casa
 
     // mostra o resultado
-    cout << "Você digitou " << number << " mudado para " << mudar
+    cout << "Você digitou " << number << " / 3,14159 = " << mudar
             << "\nque foi arredondado para " << y << endl;
 } // fim função
 
@@ -128,7 +128,7 @@ void roundToHundredths( int number)
     float y = floor( mudar * 100 + .5 ) / 100; // arredonda y com duas casa
 
     // mostra o resultado
-    cout << "Você digitou " << number << " mudado para " << mudar
+    cout << "Você digitou " << number << " / 3,14159 = " << mudar
             << "\nque foi arredondado para " << y << endl;
 } // fim função
 
@@ -141,6 +141,6 @@ void roundToThousandths( int number)
     float y = floor( mudar * 1000 + .5 ) / 1000; // arredonda y com três casas
 
     // mostra o resultado
-    cout << "Você digitou " << number << " mudado para " << mudar
+    cout << "Você digitou " << number << " / 3,14159 = " << mudar
             << "\nque foi arredondado para " << y << endl;
 } // fim função
