@@ -69,7 +69,7 @@ int main()
     {
         // c) 6, 10, 14, 18, 22.
         // aleatorio recebe rand()
-        aleatorio = 1 + rand() % 20;
+        aleatorio = 2 + rand() % 20;
 
         // se aleatório for par
         if( aleatorio >= 6 && aleatorio % 2 == 0 )
