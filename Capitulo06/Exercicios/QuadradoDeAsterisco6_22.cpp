@@ -13,6 +13,9 @@
 
 using namespace std;
 
+// protótipo de função
+ void quadrado( int tamanho );
+
 // função principal
 int main()
 {
@@ -22,19 +25,24 @@ int main()
     // limpa a tela
     system("cls");
 
-    //loop para linhas
-    for( int i = 1; i <= 4; i++ )
-    {
-        // loop para as colunas
-        for( int j = 1; j <= 4; j++ )
-        {
-            // imprime os asteriscos
-            cout << '*';
-        } // fim for coluna
+    // variável
+    int contador;
+    int tamanho;
 
-        // pula uma linha
-        cout << endl;
-    } // fim for linha
+    // enquanto contador diferente de -1 faça
+    while( contador != -1)
+    {
+        // entrada de dados
+        cout << "Informe o tamanho do quadrado: ";
+        cin >> tamanho;
+
+        // chama a função quadrado
+        quadrado( tamanho );
+
+        // perguntar
+        cout << "Deseja continuar (-1 = sair): ";
+        cin >> contador;
+    } // fim enquanto
 
     // pula linha
     cout << endl;
@@ -44,3 +52,22 @@ int main()
     return 0; // programa terminado com sucesso
 
 } // fim main
+
+// cria a função quadrado
+void quadrado( int tamanho )
+{
+    //loop para linhas
+    for( int i = 1; i <= tamanho; i++ )
+    {
+        // loop para as colunas
+        for( int j = 1; j <= tamanho; j++ )
+        {
+            // imprime os asteriscos
+            cout << "* " ;
+        } // fim for coluna
+
+        // pula uma linha
+        cout << endl;
+    } // fim for linha
+
+} // fim função
