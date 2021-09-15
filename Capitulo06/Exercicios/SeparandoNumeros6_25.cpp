@@ -63,7 +63,7 @@ void separarNumero( int numero )
     // cria variáveis
     int n1,n2,n3,n4,n5;
 
-    // calcular
+    // separando os números
     n1 = numero / 10000 % 10000;
     n2 = numero % 10000 / 1000;
     n3 = numero % 1000 / 100;
