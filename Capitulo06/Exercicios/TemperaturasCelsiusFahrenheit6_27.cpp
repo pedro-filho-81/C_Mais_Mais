@@ -22,6 +22,7 @@ using namespace std;
 // protótipos de função
 int celsius( int fah );
 int fahrenheit( int cel );
+void temperaturaMista();
 
 // função principal
 int main()
@@ -36,36 +37,54 @@ int main()
     int cel = 0;
     int fah = 0;
     int opcao = 0;
+    int resposta = 0;
 
-    // menu
-    cout << "CONVERSÃO DE TEMPERATURA" << endl;
-    cout << "***********************" << endl;
-    cout << "*  1   =   Celcius    *" << endl;
-    cout << "*  2   =   Fahreneit  *" << endl;
-    cout << "***********************" << endl;
-
-    // entrada de dados
-    cout << "Qual sua opção: ";
-    cin >> opcao;
-
-    // switch
-    switch( opcao )
+    // enquanto resposta diferente de -1 faça
+    while( resposta != -1)
     {
-        case 1:
-            cout << "Digite a temperatura em Fahrenheit: ";
-            cin >> fah;
-            cout << "A temperatura " << fah << "ºF equivale a "
-                    << celsius( fah ) << "ºC" << endl;
-            break;
+        // menu
+        cout << "CONVERSÃO DE TEMPERATURA" << endl;
+        cout << "***********************" << endl;
+        cout << "*  1   =   Celcius    *" << endl;
+        cout << "*  2   =   Fahreneit  *" << endl;
+        cout << "*  3   =   Mistas     *" << endl;
+        cout << "***********************" << endl;
 
-        case 2:
-            cout << "Digite a temperatura em Celsius: ";
-            cin >> cel;
-            cout << "A temperatura " << cel << "ºC equivale a "
-                    << fahrenheit( cel ) << "ºF" << endl;
-            break;
+        // entrada de dados
+        cout << "Qual sua opção: ";
+        cin >> opcao;
 
-    }// fim switch
+        // switch
+        switch( opcao )
+        {
+            case 1:
+                cout << "Digite a temperatura em Fahrenheit: ";
+                cin >> fah;
+                cout << "A temperatura " << fah << "ºF equivale a "
+                        << celsius( fah ) << "ºC" << endl;
+                break;
+
+            case 2:
+                cout << "Digite a temperatura em Celsius: ";
+                cin >> cel;
+                cout << "A temperatura " << cel << "ºC equivale a "
+                        << fahrenheit( cel ) << "ºF" << endl;
+                break;
+
+            case 3:
+                temperaturaMista();
+                break;
+
+        }// fim switch
+
+        // Entrada da resposta
+        cout << "Deseja continuar (-1 para sair)? ";
+        cin >> resposta;
+
+        // limpa a tela
+        system("cls");
+
+    } // fim while
 
     // pula linha
     cout << endl;
@@ -92,4 +111,32 @@ int celsius( int fah )
     int resultado = ( fah - 32 ) / 1.8;
 
     return resultado;
-}
+} // fim função celsius
+
+// cria a função temperaturaMista
+void temperaturaMista()
+{
+    // variável
+    int resultado = 0;
+
+    // cabeçalho
+    cout << "Celsius" << setw( 15 ) << "Fahrenheit" << endl;
+
+    for( int cel = 0; cel <= 50; cel += 5 )
+    {
+        // resultado recebe o valor da função celsius
+        resultado = fahrenheit( cel );
+
+        // imprime o resultado
+        cout << setw(3) << cel << "ºC" << setw(12) << resultado << "ºF";
+
+        // loop para criar graficos de asteriscos
+        for( int j = 0; j <= resultado; j++ )
+            // imprima asterisco
+            cout << "*";
+
+        // pula linha
+        cout << endl;
+    } // fim for
+
+} // fim função temperatura mista
