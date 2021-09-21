@@ -68,7 +68,7 @@ int main()
         {
             // imprima
             cout << "Excelente! Você adivinhou que eu gerei " << resposta
-                    << " em " << tentativas << "tentativas." << endl;
+                    << " em " << tentativas << " tentativas." << endl;
 
             // chama a função tentativas de acerto
             tentativasDeAcertos( tentativas );
