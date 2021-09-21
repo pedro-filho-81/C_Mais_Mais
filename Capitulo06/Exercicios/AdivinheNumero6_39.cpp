@@ -83,7 +83,10 @@ int main()
         if( simOuNao == 'n' || simOuNao == 'N' )
             break; // saia do programa
         else
+        {
             system("cls"); // limpa a tela
+            tentativas = 0; // reinicializa o número de tentativas
+        } // fim else
 
     } // fim while externo
 
