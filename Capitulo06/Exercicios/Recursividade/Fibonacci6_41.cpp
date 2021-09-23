@@ -37,7 +37,7 @@ int main()
     // chama a função fibonacci para inteiros
     fibonacci( 1000000000  );
 
-    // chama a função fibonacci para double
+    // chama a função fibonacci para double ( suporta números maiores ).
     fibonacciDouble( 1000000000000000 );
 
     // pula linha
