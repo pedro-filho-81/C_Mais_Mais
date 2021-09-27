@@ -56,7 +56,11 @@ int main()
 
     // cria variável
     int discos;
+    char resposta = 's';
 
+    // enquanto resposta diferente de s
+    while( resposta != 'n' )
+    {
     // cabeçalho
     cout << "\tTORRE DE HANÓI" << endl;
 
@@ -64,8 +68,17 @@ int main()
     cout << "Informe o número de discos: ";
     cin >> discos;
 
-    // chama a função hanoi
+    // chama a função hanoi ( origem, destio, auxiliar )
     torreDeHanoi( discos, " 1 ", " 3 ", " 2 " );
+
+    // pergunta
+    cout << "Deseja continuar ( s / n )? ";
+    cin >> resposta;
+
+    // limpa a tela
+    system("cls");
+
+    } // fim while
 
     // pula linha
     cout << endl;
@@ -91,12 +104,14 @@ void torreDeHanoi( int discos, string origem, string destino, string auxiliar )
     else // se não
     {
         // chama a função recursivamente e mova o disco da origem para o destino
+        // ( 1, 2, 3 ) 1 => 3
         torreDeHanoi( discos - 1, origem, auxiliar, destino );
 
         // imprima
         cout << "Mova o disco da " << origem << " para " << destino << endl;
 
         // chama a função recursivamente e mova o disco da origem para o destino
+        // ( 2, 3, 1 ) 3 => 2
         torreDeHanoi( discos - 1, auxiliar, destino, origem );
     } // fim else
 } // fim função
