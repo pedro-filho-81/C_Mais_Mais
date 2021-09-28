@@ -170,7 +170,7 @@ int umNumeroAleatorio()
 int doisNumerosAleatorios()
 {
     // variável recebe valor aleatório
-    int alea = 10 + rand() % 10;
+    int alea = 10 + rand() % 90;
     // retorne o valor
     return alea;
 
@@ -180,7 +180,7 @@ int doisNumerosAleatorios()
 int tresNumerosAleatorios()
 {
     // variável recebe valor aleatório
-    int alea = 100 + rand() % 100;
+    int alea = 100 + rand() % 900;
     // retorne o valor
     return alea;
 
