@@ -34,8 +34,12 @@ int umNumeroAleatorio(); // números aleatório entre 1 e 10
 int doisNumerosAleatorios(); // gera dois números aleatórios
 int tresNumerosAleatorios(); // gera três números aleatórios
 int perguntaNivel(); // para saber em que nível o aluno está
+int operacaoAritimetica(); // para saber qual das 4 operações o aluno quer estudar
+int somar( int num1, int num2 ); // para somar 2 números
+int subtrair( int num1, int num2 ); // para subtrair 2
 int multiplicar( int num1, int num2 ); // para multiplicar dois números
-void entrarComDados();
+int dividir( int num1, int num2 ); // para dividir dois números
+
 void mensagemParaAcerto(); // para respostas certas
 void mensagemParaErros(); // para respostas erradas
 void acertosErros( int jogadas, int acertos, int erros ); // mostra o resumo
@@ -186,12 +190,34 @@ int tresNumerosAleatorios()
 
 } // fim função tres
 
+// cria a função somar
+int somar( int num1, int num2 )
+{
+    // retorne o resultado da soma
+    return num1 + num2;
+} // fim função somar
+
+// cria a função subtrair
+int subtrair( int num1, int num2 )
+{
+    // retorne o resultado da subtração
+    return num1 - num2;
+} // fim função subtrair
+
 // cria a função multiplicar
 int multiplicar(int num1, int num2 )
 {
     // retorna o valor da multiplicação
     return num1 * num2;
 } // fim da função multiplicar
+
+// cria a função dividir
+int dividir( int num1, int num2 )
+{
+    // retorna o valor da divisão
+    return num1 / num2;
+} // fim da função dividir
+
 
 // cria a função para estabelecer o nível do jogo
 int perguntaNivel()
