@@ -30,9 +30,12 @@
 using namespace std;
 
 // protótipos
-int geraUmAleatorio(); // números aleatório entre 1 e 10
-void menuPrincipal(); // menu proncipal
-void entrarComDados(); // para entrada de dados do usuário
+int umNumeroAleatorio(); // números aleatório entre 1 e 10
+int doisNumerosAleatorios(); // gera dois números aleatórios
+int tresNumerosAleatorios(); // gera três números aleatórios
+int perguntaNivel(); // para saber em que nível o aluno está
+int multiplicar( int num1, int num2 ); // para multiplicar dois números
+void entrarComDados();
 void mensagemParaAcerto(); // para respostas certas
 void mensagemParaErros(); // para respostas erradas
 void acertosErros( int jogadas, int acertos, int erros ); // mostra o resumo
@@ -46,91 +49,52 @@ int main()
     // limpa a tela
     system("cls");
 
-    // variáveis
-    int opcoes = 0; // para o menu
-    int tabuada = 1; // para o usuário informar que tabuada quer estudar
-    char resposta = 's'; // para a pergunta
-
     //gerador
     srand( time( NULL ) );
 
-    // enquanto resposta diferente de n
-    while( resposta != 'n' )
-    {
-        // chama a função menu principal
-        menuPrincipal();
-
-        // entrada da opção
-        cout << "Qual a sua opção: ";
-        cin >> opcoes;
-
-        cout << "De 1 a 10 qual tabuada deseja estudar? ";
-        cin >> tabuada;
-
-        // Chama a função entrar com dados
-        entrarComDados();
-
-        // pergunta
-        cout << "Deseja continuar ( s / n )? ";
-        cin >> resposta;
-
-    } // fim while
-
-    // pula linha
-    cout << endl;
-
-    system("pause"); // pausa do programa
-
-    return 0; // programa terminado com sucesso
-
-} // fim main
-
-// cria a função primeiroAleatorio
-int geraUmAleatorio()
-{
-    // variável recebe valor aleatório
-    int alea = 1 + rand() % 10;
-
-    // retorne o valor
-    return alea;
-
-} // fim função
-
-// cria o menu principal
-void menuPrincipal()
-{
-    // cabeçalho
-    cout << "\tAPRENDENDO TABUADA" << endl;
-
-    // menu de opções
-    cout << "**************************************" << endl;
-    cout << "*  1       Tabuada de 1 a 10        *" << endl;
-    cout << "*  2       Tabuada de 1 a 15        *" << endl;
-    cout << "*  3       Tabuada de 1 a 20        *" << endl;
-    cout << "**************************************" << endl;
-} // fim função menu principal
-
-// entrada de dados
-void entrarComDados()
-{
     // variável
     int resposta = 0, produto = 1;
     int contaAcertos = 0;
     int contaErros = 0;
     int contaJogadas = 0;
+    int num1 = 0; // para receber valores aleatórios
+    int num2 = 0; // para receber valores aleatorios
+    int nivelDoAluno = 0; // recebe a resposta do nível
+
+    // cabeçalho
+    cout << "\tAPRENDENDO" << endl;
+
+    // chama a função pergunta nivel
+    nivelDoAluno = perguntaNivel();
 
     // enquanto resposta diferente de -1
     while( resposta != -1 )
     {
-        // variáveis
-        int num1 = geraUmAleatorio();
-        int num2 = geraUmAleatorio();
-        int resposta = 0, produto = 1;
+        // switch recebe o valor em que o aluno está
+        switch( nivelDoAluno )
+        {
+            case 1:
+                num1 = umNumeroAleatorio();
+                num2 = umNumeroAleatorio();
+                break;
+            case 2:
+                num1 = doisNumerosAleatorios();
+                num2 = doisNumerosAleatorios();
+                break;
+            case 3:
+                num1 = tresNumerosAleatorios();
+                num2 = tresNumerosAleatorios();
+                break;
+        } // fim switch
+
+        // atribuindo valor às variáveis
+        resposta = 0;
+        produto = 1;
 
         // enquanto resposta diferente de produto
         while( resposta != produto )
         {
-            // entrada de dados
+            // entrada de dados pelo usuário
             cout << "Quanto é (-1 = sair): " <<  num1 << " x " << num2 << " = ";
             cin >> resposta;
 
@@ -145,7 +109,7 @@ void entrarComDados()
             } // fim if
 
             // calcular os valores
-            produto = num1 * num2;
+            produto = multiplicar( num1, num2 );
 
             // se resposta igual ao produto
             if( resposta == produto ) // se
@@ -183,7 +147,72 @@ void entrarComDados()
     // chama afunção acertos e erros
     acertosErros( contaJogadas, contaAcertos, contaErros );
 
-} // fim função entrar com dados
+    // pula linha
+    cout << endl;
+
+    system("pause"); // pausa do programa
+
+    return 0; // programa terminado com sucesso
+
+} // fim main
+
+// cria a função primeiroAleatorio
+int umNumeroAleatorio()
+{
+    // variável recebe valor aleatório
+    int alea = 1 + rand() % 10;
+    // retorne o valor
+    return alea;
+
+} // fim função um
+
+// cria a função doisNumerosAleatorio
+int doisNumerosAleatorios()
+{
+    // variável recebe valor aleatório
+    int alea = 10 + rand() % 10;
+    // retorne o valor
+    return alea;
+
+} // fim função dois
+
+// cria a função doisNumerosAleatorio
+int tresNumerosAleatorios()
+{
+    // variável recebe valor aleatório
+    int alea = 100 + rand() % 100;
+    // retorne o valor
+    return alea;
+
+} // fim função tres
+
+// cria a função multiplicar
+int multiplicar(int num1, int num2 )
+{
+    // retorna o valor da multiplicação
+    return num1 * num2;
+} // fim da função multiplicar
+
+// cria a função para estabelecer o nível do jogo
+int perguntaNivel()
+{
+    // variável
+    int nivel = 0;
+
+    // cabeçalho
+    cout << "\tTABUADA DE?" << endl;
+    cout << "=-=-=-=-=-=-=-=-=-=-=-=-=-=" << endl;
+    cout << "=-       1 número        -=" << endl;
+    cout << "=-       2 número        -=" << endl;
+    cout << "=-       3 número        -=" << endl;
+    cout << "=-=-=-=-=-=-=-=-=-=-=-=-=-=" << endl;
+    cout << "Em que nível você está? ";
+    cin >> nivel;
+
+    // retorna o valor do nível do aluno.
+    return nivel;
+
+} // fim da função nível do jogo
 
 // cria a função mensagemParaAcerto
 void mensagemParaAcerto()
