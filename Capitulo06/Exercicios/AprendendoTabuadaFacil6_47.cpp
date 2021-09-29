@@ -30,15 +30,15 @@
 using namespace std;
 
 // protótipos
-int umNumeroAleatorio(); // números aleatório entre 1 e 10
+int umNumeroAleatorio(); // gera um número aleatório
 int doisNumerosAleatorios(); // gera dois números aleatórios
 int tresNumerosAleatorios(); // gera três números aleatórios
-int perguntaNivel(); // para saber em que nível o aluno está
-int operacaoAritimetica(); // para saber qual das 4 operações o aluno quer estudar
-int somar( int num1, int num2 ); // para somar 2 números
-int subtrair( int num1, int num2 ); // para subtrair 2
-int multiplicar( int num1, int num2 ); // para multiplicar dois números
-int dividir( int num1, int num2 ); // para dividir dois números
+
+int escolherPerguntaNivel(); // para saber em que nível o aluno está
+int escolherOperacaoAritimetica(); // para saber qual das 4 operações o aluno quer estudar
+int tipoDaOperacao( int tipoOperacao, int num1, int num2 ); // seleciona o tipo da operação aritimética
+
+char sinalDaOperacao( int operacao ); // sinal da operação aritimética
 
 void mensagemParaAcerto(); // para respostas certas
 void mensagemParaErros(); // para respostas erradas
@@ -53,53 +53,70 @@ int main()
     // limpa a tela
     system("cls");
 
-    //gerador
-    srand( time( NULL ) );
-
-    // variável
-    int resposta = 0, produto = 1;
+    // variáveis
+    int resposta = 0;
+    int produto = 1;
     int contaAcertos = 0;
     int contaErros = 0;
     int contaJogadas = 0;
     int num1 = 0; // para receber valores aleatórios
     int num2 = 0; // para receber valores aleatorios
     int nivelDoAluno = 0; // recebe a resposta do nível
+    int aritimetica = 1; // recebe à função operação aritimética
+    int valorDaAritimetica = 0;
+    char sinal = ' '; // para o sinal aritimético ( +, -, *, / )
 
     // cabeçalho
     cout << "\tAPRENDENDO" << endl;
 
-    // chama a função pergunta nivel
-    nivelDoAluno = perguntaNivel();
-
     // enquanto resposta diferente de -1
     while( resposta != -1 )
     {
-        // switch recebe o valor em que o aluno está
-        switch( nivelDoAluno )
+        //gerador
+        srand( time( NULL ) );
+
+        // se conta acertos igual a zero
+        if( contaAcertos == 0 )
         {
-            case 1:
-                num1 = umNumeroAleatorio();
-                num2 = umNumeroAleatorio();
-                break;
-            case 2:
-                num1 = doisNumerosAleatorios();
-                num2 = doisNumerosAleatorios();
-                break;
-            case 3:
-                num1 = tresNumerosAleatorios();
-                num2 = tresNumerosAleatorios();
-                break;
-        } // fim switch
+            // chama a função menu escolher o nivel
+            nivelDoAluno = escolherPerguntaNivel();
+
+            // limpa a tela
+            system("cls");
+
+            // chama a função menu escolha a operação aritimética
+            aritimetica = escolherOperacaoAritimetica();
+        } // fim if conta acertos
 
         // atribuindo valor às variáveis
         resposta = 0;
         produto = 1;
 
         // enquanto resposta diferente de produto
-        while( resposta != produto )
+        while( resposta != aritimetica )
         {
-            // entrada de dados pelo usuário
-            cout << "Quanto é (-1 = sair): " <<  num1 << " x " << num2 << " = ";
+            // switch recebe o valor em que o aluno está
+            switch( nivelDoAluno )
+            {
+                case 1:
+                    num1 = umNumeroAleatorio();
+                    num2 = umNumeroAleatorio();
+                    break;
+                case 2:
+                    num1 = doisNumerosAleatorios();
+                    num2 = doisNumerosAleatorios();
+                    break;
+                case 3:
+                    num1 = tresNumerosAleatorios();
+                    num2 = tresNumerosAleatorios();
+                    break;
+            } // fim switch
+
+            // sinal recebe o caractere retornado pela função sinalDaOperacao
+            sinal = sinalDaOperacao( aritimetica );
+
+            // entrada da resposta do usuário
+            cout << "Quanto é (-1 = sair): " <<  num1 << " " << sinal << " " << num2 << " = ";
             cin >> resposta;
 
             // conta as jogadas
@@ -112,43 +129,59 @@ int main()
                 break; // fim do programa
             } // fim if
 
-            // calcular os valores
-            produto = multiplicar( num1, num2 );
+            // chama a função aritimética e atribuir o valor ao produto
+            produto = tipoDaOperacao( aritimetica, num1, num2 ); // COLOCAR UM SWITCH AQUI;
 
-            // se resposta igual ao produto
-            if( resposta == produto ) // se
+            // se a resposta do usuário for igual ao produto do cálculo
+            if( resposta == produto )
             {
                 // chama a função mensagem para acertos
                 mensagemParaAcerto();
                 // conta os acertos
                 ++contaAcertos;
+
             } // fim if
             else // se não
             {
-                // chama a função mensagem para erros
-                mensagemParaErros();
-                // conta os erros
-                ++contaErros;
+                // repita enquanto a resposta for diferente de produto repita
+                while( resposta != produto )
+                {
+                    // chama a função mensagem para erros
+                    mensagemParaErros();
+
+                    // conta os erros
+                    ++contaErros;
+
+                    // repete a entrada da resposta do usuário
+                    cout << "Quanto é (-1 = sair): " <<  num1 << " " << sinal << " " << num2 << " = ";
+                    cin >> resposta;
+
+                    // verifica se a resposta é igual ao produto
+                    if( resposta == produto )
+                    {
+                        ++contaAcertos; // soma 1 a acertos
+                        mensagemParaAcerto(); // exibe mensagem pelo acerto
+                    } // fim if resposta igual produto
+
+                } // fim while resposta diferente do produto
+
             } // fim else
 
-            // se contaJogadas igual a 10
+            // verifica se contaJogadas igual a 10
             if( contaJogadas >= 10 )
                 break; // sair do programa
 
         } // fim while interno
 
-        // se resposta igual ao produto
-        if( resposta == -1 )
+        // se resposta igual a -1 ou o acerto igual a 10
+        if( resposta == -1 || contaJogadas >= 10 )
         {
             break; // fim do programa
         } // fim if
 
-        // se contaJogadas igual a 10
-        if( contaJogadas >= 10 )
-            break; // sair do programa
     } // fim primeiro while
 
-    // chama afunção acertos e erros
+    // chama afunção acertos e erros e mostra o resultado
     acertosErros( contaJogadas, contaAcertos, contaErros );
 
     // pula linha
@@ -190,37 +223,8 @@ int tresNumerosAleatorios()
 
 } // fim função tres
 
-// cria a função somar
-int somar( int num1, int num2 )
-{
-    // retorne o resultado da soma
-    return num1 + num2;
-} // fim função somar
-
-// cria a função subtrair
-int subtrair( int num1, int num2 )
-{
-    // retorne o resultado da subtração
-    return num1 - num2;
-} // fim função subtrair
-
-// cria a função multiplicar
-int multiplicar(int num1, int num2 )
-{
-    // retorna o valor da multiplicação
-    return num1 * num2;
-} // fim da função multiplicar
-
-// cria a função dividir
-int dividir( int num1, int num2 )
-{
-    // retorna o valor da divisão
-    return num1 / num2;
-} // fim da função dividir
-
-
 // cria a função para estabelecer o nível do jogo
-int perguntaNivel()
+int escolherPerguntaNivel()
 {
     // variável
     int nivel = 0;
@@ -239,6 +243,74 @@ int perguntaNivel()
     return nivel;
 
 } // fim da função nível do jogo
+
+// cria a função para estabelecer o nível do jogo
+int escolherOperacaoAritimetica()
+{
+    // variável
+    int operacao = 0;
+
+    // cabeçalho
+    cout << setw(25) << "OPERAÇÃO ARITIMÉTICA" << endl;
+    cout << "=-=-=-=-=-=-=-=-=-=-=-=-=-=" << endl;
+    cout << "=-       1 Somar         -=" << endl;
+    cout << "=-       2 Subtrair      -=" << endl;
+    cout << "=-       3 Multiplicar   -=" << endl;
+    cout << "=-       4 Dividir       -=" << endl;
+    cout << "=-       5 Misturados    -=" << endl;
+    cout << "=-=-=-=-=-=-=-=-=-=-=-=-=-=" << endl;
+
+    // enquanto operação menor que 1 e maior que 5
+    cout << "Qual a sua opção? ";
+    cin >> operacao;
+
+    // retorna o valor do aluno.
+    return operacao;
+
+} // fim da função nível do jogo
+
+// cria a função tipo da oparação aritimética
+int tipoDaOperacao( int tipoOperacao, int num1, int num2 )
+{
+    switch( tipoOperacao )
+    {
+        case 1:
+            return num1 + num2;
+            break;
+        case 2:
+            return num1 - num2;
+            break;
+        case 3:
+            return num1 * num2;
+            break;
+        case 4:
+            return num1 / num2;
+            break;
+    } // fim switch
+} // fim função tipo da operação aritimética
+
+// cria a função sinal da operação aritimética
+char sinalDaOperacao( int operacao )
+{
+    // FALTA TRABALHAR ESSA FUNÇÃO
+    switch ( operacao ) // recebe o valor da operação ( 1=+, 2=-, 3=x, 4=/ )
+    {
+        case 1:
+            return '+'; // retorna o sinal de somar +
+            break;
+        case 2:
+            return '-'; // retorna o sinal de subtrair -
+            break;
+        case 3:
+            return 'x'; // retorna o silan de vezes x
+            break;
+        case 4:
+            return '/'; // retorna o sinal de dividir /
+            break;
+
+    } // fim switch
+
+} // fim função sinal da operação
 
 // cria a função mensagemParaAcerto
 void mensagemParaAcerto()
@@ -274,16 +346,16 @@ void mensagemParaErros()
     switch( alea )
     {
         case 1:
-            cout << "Não.   Tente novamente." << endl;
+            cout << "Não. Tente novamente." << endl;
             break;
         case 2:
-            cout << "Errado.    Tente mais uma vez." << endl;
+            cout << "Errado. Tente mais uma vez." << endl;
             break;
         case 3:
             cout << "Não desista!" << endl;
             break;
         case 4:
-            cout << "Não.   Continue tentando." << endl;
+            cout << "Não. Continue tentando." << endl;
             break;
     } // fim switch
 } // fim função mensagem errada
