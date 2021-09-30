@@ -115,15 +115,25 @@ int main()
             // sinal recebe o caractere retornado pela função sinalDaOperacao
             sinal = sinalDaOperacao( aritimetica );
 
-            // entrada da resposta do usuário
-            cout << "Quanto é (-1 = sair): " <<  num1 << " " << sinal << " " << num2 << " = ";
-            cin >> resposta;
+            // se aritimética igual a 4 e num1 menor que num2
+            if( ( aritimetica == 4 ) && ( num1 < num2 ) )
+            {
+                // entrada da resposta do usuário
+                cout << "Quanto é( 99999 = sair ): " <<  num2 << " " << sinal << " " << num1 << " = ";
+                cin >> resposta;
+            } // fim if
+            else // se não
+            {
+                // entrada da resposta do usuário
+                cout << "Quanto é( 99999 = sair ): " <<  num1 << " " << sinal << " " << num2 << " = ";
+                cin >> resposta;
+            } // fim else
 
             // conta as jogadas
             contaJogadas += 1;
 
             // se resposta igual ao produto
-            if( resposta == -1 )
+            if( resposta == 99999 )
             {
                 --contaJogadas;
                 break; // fim do programa
@@ -143,7 +153,7 @@ int main()
             } // fim if
             else // se não
             {
-                // repita enquanto a resposta for diferente de produto repita
+                // repita enquanto a resposta for diferente de produto
                 while( resposta != produto )
                 {
                     // chama a função mensagem para erros
@@ -152,9 +162,19 @@ int main()
                     // conta os erros
                     ++contaErros;
 
-                    // repete a entrada da resposta do usuário
-                    cout << "Quanto é (-1 = sair): " <<  num1 << " " << sinal << " " << num2 << " = ";
-                    cin >> resposta;
+                    // se aritimética igual a 4 e num1 menor que num2
+                    if( ( aritimetica == 4 ) && ( num1 < num2 ) )
+                    {
+                        // entrada da resposta do usuário
+                        cout << "Quanto é( 99999 = sair ): " <<  num2 << " " << sinal << " " << num1 << " = ";
+                        cin >> resposta;
+                    } // fim if
+                    else // se não
+                    {
+                        // entrada da resposta do usuário
+                        cout << "Quanto é( 99999 = sair ): " <<  num1 << " " << sinal << " " << num2 << " = ";
+                        cin >> resposta;
+                    } // fim else
 
                     // verifica se a resposta é igual ao produto
                     if( resposta == produto )
@@ -162,6 +182,10 @@ int main()
                         ++contaAcertos; // soma 1 a acertos
                         mensagemParaAcerto(); // exibe mensagem pelo acerto
                     } // fim if resposta igual produto
+
+                    else if( resposta == 99999 )
+                        // sair do programa
+                        break;
 
                 } // fim while resposta diferente do produto
 
@@ -174,12 +198,12 @@ int main()
         } // fim while interno
 
         // se resposta igual a -1 ou o acerto igual a 10
-        if( resposta == -1 || contaJogadas >= 10 )
+        if( resposta == 99999 || contaJogadas >= 10 )
         {
             break; // fim do programa
         } // fim if
 
-    } // fim primeiro while
+    } // fim primeiro while externo
 
     // chama afunção acertos e erros e mostra o resultado
     acertosErros( contaJogadas, contaAcertos, contaErros );
@@ -233,8 +257,8 @@ int escolherPerguntaNivel()
     cout << "\tTABUADA DE?" << endl;
     cout << "=-=-=-=-=-=-=-=-=-=-=-=-=-=" << endl;
     cout << "=-       1 número        -=" << endl;
-    cout << "=-       2 número        -=" << endl;
-    cout << "=-       3 número        -=" << endl;
+    cout << "=-       2 números       -=" << endl;
+    cout << "=-       3 números       -=" << endl;
     cout << "=-=-=-=-=-=-=-=-=-=-=-=-=-=" << endl;
     cout << "Em que nível você está? ";
     cin >> nivel;
@@ -284,6 +308,10 @@ int tipoDaOperacao( int tipoOperacao, int num1, int num2 )
             return num1 * num2;
             break;
         case 4:
+            // se num1 menor que num2
+            if( num1 < num2 )
+                // retorne o resultado de num2 dividido por num1
+                return num2 / num1;
             return num1 / num2;
             break;
     } // fim switch
@@ -360,7 +388,7 @@ void mensagemParaErros()
     } // fim switch
 } // fim função mensagem errada
 
-// cria a função acertosErros
+// cria a função acertosErros que mostra os resultados
 void acertosErros( int jogadas, int acertos, int erros )
 {
     // mostra resultado
