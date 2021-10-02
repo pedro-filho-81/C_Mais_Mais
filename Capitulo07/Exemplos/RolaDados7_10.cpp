@@ -33,12 +33,12 @@ int main()
     srand( time( 0 ) );
 
     // loop para rolar os dados 6000000 vezes
-    for( int i = 1; i < 6000000; i++ )
+    for( int i = 1; i <= 6000000; i++ )
         // conta o número de vezes que um número apareceu
         frequencia[ 1 + rand() % 6 ]++;
 
     // cabeçalho
-    cout << "ROLA DADOS 6000000 VEZES" << endl;
+    cout << "ROLA DADOS 6.000.000 VEZES" << endl;
 
     // valor e frequência
     cout << "Valor" << setw( 13 ) << "Frequência" << endl;
