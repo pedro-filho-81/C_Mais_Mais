@@ -32,6 +32,8 @@ int main()
     // imprime a constante
     cout << "O valor da constante x é " << x << endl;
 
+    cout << "OBS: Toda constante tem que ser inicializada." << endl;
+
     // pula linha
     cout << endl;
 
