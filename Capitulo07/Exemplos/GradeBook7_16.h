@@ -16,7 +16,7 @@ class GradeBook
 {
 public:
     // constante -- número de alunos que fizeram o teste
-    const static int student = 10; // na parte pública pode ser usado por toda a classe
+    const static int students = 10; // na parte pública pode ser usado por toda a classe
 
     // cria o construtor para inicializa onome do curso e às notas
     GradeBook( string, const int [] );
@@ -35,6 +35,6 @@ private:
     // variável para
     string courseName; // armazena o nome do curso
     // array para
-    int grades[ student ];  // armazena as notas dos estudantes
+    int grades[ students ];  // armazena as notas dos estudantes
 
 }; // fim da classe
