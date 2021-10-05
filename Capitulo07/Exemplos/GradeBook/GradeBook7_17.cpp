@@ -14,6 +14,25 @@
 
 using namespace std;
 
+int main()
+{
+    setlocale( LC_ALL, "portuguese" );
+
+    // ARRAY de notas
+    int gradesArray[ GradeBook::students ] =
+    { 87, 68, 94, 100, 83, 78, 85, 91, 73, 87 };
+
+    GradeBook meuGradeBook( "CS101 C++ como programar dos Deitel.", gradesArray );
+
+    // chama afunção display
+    meuGradeBook.displayMessage();
+
+    meuGradeBook.processGradeBook();
+
+    cout << "Hello world!" << endl;
+    return 0;
+} // fim main
+
     // cria o construtor
     GradeBook::GradeBook( string name, const int gradesArray[ ] )
     {
@@ -52,15 +71,13 @@ using namespace std;
         outputBarChart();
 
         // chama a função getMedia
-        cout << "a nota média do grupo é " << fixed << setprecision( 2 ) << getAverage() << endl;
+        cout << "A nota média do grupo é " << fixed << setprecision( 2 ) << getAverage() << endl;
 
         // chama a função getMinimum e getMaximum
-        cout << "\nA         menor nota foi " << getMinimum()
+        cout << "\nA menor nota foi " << getMinimum()
                 << "\nA maior nota foi " << getMaximum()
                 << endl;
 
-        // chama a função outputBarChart
-        outputBarChart(); // para mostrar o gráfico das notas
     } // fim função processGradeBook
 
     // cria a função getMinimum
@@ -73,7 +90,7 @@ using namespace std;
         for( int grade = 0; grade < students; grade++ )
         {
             // se a nota for menor que a menor nota
-            if( grade < lowGrade )
+            if( grades[ grade ] < lowGrade )
                 // menor nota recebe a nota
                 lowGrade = grades[ grade ]; // recebe uma nova nota
         } // fim for
@@ -96,6 +113,7 @@ using namespace std;
                 // heithGrade recebe a maior nota
                 heithGrade = grades[ grade ];
         } // fim for
+        return heithGrade;
     } // fim funcão getMaximum
 
     // cria a função getAverage
@@ -132,7 +150,7 @@ using namespace std;
             // gera saida de gráfico de barras
             if( contar == 0 )
             {
-                cout << "  0-09: ";
+                cout << "  0-9: ";
             } // fim if
             // se não
             else if( contar == 10 )
@@ -141,21 +159,20 @@ using namespace std;
             } // fim else if
             else
             {
-                cout << contar * 10 << "-" <<   ( contar * 10 ) + 9 <<  "  : ";
+                cout << contar * 10 << "-" <<   ( contar * 10 ) + 9 <<  ": ";
             }
 
             // loop para imprimir as barras de asteriscos
-            for( int estrelas = 0; estrelas = frequency[ contar ]; estrelas++ )
+            for( int estrelas = 0; estrelas < frequency[ contar ]; estrelas++ )
                 cout << "*";
 
             cout << endl; // pula linha
         } // fim for externo
     } // fim função outputBarChats
 
-
     void GradeBook::outputGrades() // mostra as notas dos alunos
     {
-        // imprime
+            // imprime
         cout << "As notas são:\n\n";
 
         // gera saida das notas de cada aluno
