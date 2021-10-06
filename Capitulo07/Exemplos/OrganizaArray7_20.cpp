@@ -114,6 +114,3 @@ int pesquisaLinear( const int vetor[], int tamanho, int chave ) // pesquisa o va
 
     return -1; // retorne menos 1( quando não encontrado)
 } // fim função pesquisaLinear
-
-// cria a função organizar vetor
-//int organizarVetor( int vetor[], int tamanho ) // para organizar os valores no vetor
