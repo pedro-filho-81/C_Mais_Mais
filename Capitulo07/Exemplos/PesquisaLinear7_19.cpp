@@ -9,6 +9,7 @@
 #include <iostream> // para cout e cin
 #include <locale> // para setlocale
 #include <iomanip> // para setw, fixed, setprecision
+#include <ctime> // para srand()
 
 using namespace std;
 
