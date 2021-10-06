@@ -29,18 +29,21 @@ int main()
     system("cls");
 
     // cria constante
-    const int tamanho = 10;
-    int numero[ tamanho ];
-    int chave = 0;
-    int resultado = 0;
+    const int tamanho = 15; // quantidade de elementos do vetor
+    int dados[ tamanho ] = { 0 }; // cria um vetor
+    int resultado = 0; // recebe o valor da pesquisa
 
-    srand( time( 0 ) );
+    srand( time( 0 ) ); // gerador
 
-    // chama afunção adicionar valores
-    adicionarValores( numero, tamanho );
+    adicionarValores( dados, tamanho );
 
-    // chama a função mostrar valores
-    mostrarValores( numero, tamanho );
+    cout << "Vetor original: ";
+    mostrarValores( dados, tamanho );
+
+    organizarVetor( dados, tamanho );
+
+    cout << "Vetor organizado: ";
+    mostrarValores( dados, tamanho );
 
     // pula linha
     cout << endl;
@@ -63,13 +66,42 @@ void adicionarValores( int vetor[], int tamanho ) // adiciona valores ao vetor
 // cria a função mostrar valores
 void mostrarValores(int vetor[], int tamanho ) // mostra os valores do vetor
 {
-    cout << "\nVetor = { ";
+    cout << "= { ";
     // loop para mostrar os valores do vetor
     for( int i = 0; i < tamanho; i++ )
-        cout << vetor[ i ] << " ";
-    cout << " };" << endl;
+        cout << setw( 4 ) << vetor[ i ];
+    cout << "    };" << endl;
 
 } // fim função mostrar vetor
+
+// cria a função organizarVetor
+void organizarVetor( int vetor[], int tamanho )
+{
+    // variável
+    int insira;
+
+    // loop para organizar em ordem crescente o array
+    for( int proximo = 1; proximo < tamanho; proximo++ )
+    {
+        insira = vetor[ proximo ];
+
+        int movaItem = proximo; // inicializa a localização para colocar o elemento
+
+        // procura um lugar para colocar o novo item
+        while(  ( movaItem > 0 ) && ( vetor[ movaItem - 1 ] > insira )  )
+        {
+            // desloca o item para uma posição para a direita
+            vetor[ movaItem ] = vetor[ movaItem - 1 ];
+
+            movaItem--; // diminua 1 de movaItem
+        } // fim loop while
+
+        // vetor recebe um valor
+        vetor[ movaItem ] = insira;
+
+    } // fim for
+
+} // fim função organizarVetor
 
 // cria a função pesquisar valor
 int pesquisaLinear( const int vetor[], int tamanho, int chave ) // pesquisa o valor no vetor
