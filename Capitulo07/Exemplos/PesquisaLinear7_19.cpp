@@ -58,10 +58,10 @@ int main()
     // chama a função pesquisa linear e atribui o valor para retornado
     retornado = pesquisaLinear( vetor, tamanho, chave );
 
-    // se o valor retornado for 1
+    // se o valor retornado for diferente de -1
     if( retornado != -1 )
         cout << "O número " << chave << " Está na posição " << retornado + 1 << endl;
-    else
+    else // se não
         cout << "O número " << chave << " não foi localizado." << endl;
 
     // pula linha
