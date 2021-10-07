@@ -102,15 +102,3 @@ void organizarVetor( int vetor[], int tamanho )
     } // fim for
 
 } // fim função organizarVetor
-
-// cria a função pesquisar valor
-int pesquisaLinear( const int vetor[], int tamanho, int chave ) // pesquisa o valor no vetor
-{
-    // loop para pesquisar no vetor o valor da chave
-    for( int i = 0; i < tamanho; i++ )
-        // se vetor igual a chave mostre a posição
-        if( vetor[ i ] == chave )
-            return i;
-
-    return -1; // retorne menos 1( quando não encontrado)
-} // fim função pesquisaLinear
