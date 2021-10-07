@@ -25,20 +25,87 @@ GradeBook7_23::GradeBook( string name, const int gradesArray[][ tests ] )
 } // fim construtor GradeBook
 
 // cria a função setCourseName
-void setCourseName( string name ) // configura o nome do curso
+void GradeBook7_23::setCourseName( string name ) // configura o nome do curso
 {
     courseName = name;
 } // fim função setCourseName
 
-string getCourseName() // retorna o nome do curso
+string GradeBook7_23::getCourseName() // retorna o nome do curso
 {
     return courseName;
 } // fim função getCourseName
 
-    void displayMessage(); // exibe uma mensagem de de boas-vindas
-    void processGrades(); // realiza várias operações de dados
-    int getMinimum(); // localiza a menor nota
-    int getMaximum(); // localiza a maior nota
+// cria função displayMessage
+void GradeBook7_23::displayMessage() // exibe uma mensagem de de boas-vindas
+{
+    cout << "Bem vindo ao curso " << getCourseName() << "!" << endl;
+} // fim função
+
+// cria a função processGrades
+void GradeBook7_23::processGrades() // realiza várias operações de dadgros
+{
+    outputGrades(); // gera a saída das notas
+
+    // chama as funções menor valor
+    cout << "\nA menor nota foi " << getMinimum() << endl;
+
+    // chama a função maior valor
+    cout << "A maior nota foi " << getMaximum() << endl;
+
+    // gera saída do gráfico de barras
+    outputBarChart();
+
+} // fim função
+
+
+// cria a função getMinimum
+int GradeBook7_23::getMinimum() // localiza a menor nota
+{
+    // vaariável
+    int lowGrade = 100;
+
+    // loop para pesquisar pelos estudantes
+    for( int student = 0; student < students; student++ )
+    {
+        // loop para pesquisar pelo teste
+        for( int test = 0; test < tests; test++ )
+
+            // se a nota for menor que a lowGrade
+            if( grades[ student ][ test ]  < lowGrade )
+
+                // lowgrade recebe a nota
+                lowGrade = grades[ student ][ test ];
+    } // fim for studante
+
+    // retorna a menor nota
+    return lowGrade;
+
+}  // fim função
+
+// cria a função getMaximum
+int getMaximum() // localiza a maior nota
+{
+    // cria variável
+    int heighGrade = 0; // para receber a maior nota
+
+    // loop para os estudantes(linha)
+    for( int student = 0; student < students; student++ )
+    {
+        // loop para os testes
+        for( int test = 0; test < tests; test++ )
+
+            // se matriz maior que heith
+            if( grades[ student ][ test ] > heighGrade )
+
+                heighGrade = grades[ student ][ test ];
+
+    } // fim for externo
+
+    // retorne heighGrades
+    return heighGrade;
+
+} // fim da função get
+
     double getAverage( const int [], const int ); // calcula a média das notas
     void outputBarChart(); // gera saída do gráfico de barras das notas
     void outputGrades(); // gera a saída do conteúdo da matris notas
