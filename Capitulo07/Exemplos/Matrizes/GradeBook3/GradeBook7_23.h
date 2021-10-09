@@ -11,14 +11,13 @@
 
 using namespace std;
 
-class GradeBook7_23
+class GradeBook
 {
 public:
     const static int students = 10; // número de estudantes avaliados
     const static int tests = 3; // número de testes aplicados para cada aluno
 
-    GradeBook( string, const int [][ tests ] ); // cria o construtor
-
+    GradeBook( string, const int [][ tests ] );
     void setCourseName( string ); // configura o nome do curso
     string getCourseName(); // retorna o nome do curso
     void displayMessage(); // exibe uma mensagem de de boas-vindas

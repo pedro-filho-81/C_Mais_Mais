@@ -9,12 +9,13 @@
 // incluir biblioteca
 #include <iostream> // para cout, cin, endl, fixed
 #include <iomanip> // para setw, setprecision
+#include <string>
 #include "GradeBook7_23.h" // para a classe
 
 using namespace std;
 
 // cria o construtor
-GradeBook7_23::GradeBook( string name, const int gradesArray[][ tests ] )
+GradeBook::GradeBook( string name, const int gradesArray[][ tests ] )
 {
     setCourseName( name ); // chama a função e recebe o nome do curso
 
@@ -25,24 +26,24 @@ GradeBook7_23::GradeBook( string name, const int gradesArray[][ tests ] )
 } // fim construtor GradeBook
 
 // cria a função setCourseName
-void GradeBook7_23::setCourseName( string name ) // configura o nome do curso
+void GradeBook::setCourseName( string name ) // configura o nome do curso
 {
     courseName = name;
 } // fim função setCourseName
 
-string GradeBook7_23::getCourseName() // retorna o nome do curso
+string GradeBook::getCourseName() // retorna o nome do curso
 {
     return courseName;
 } // fim função getCourseName
 
 // cria função displayMessage
-void GradeBook7_23::displayMessage() // exibe uma mensagem de de boas-vindas
+void GradeBook::displayMessage() // exibe uma mensagem de de boas-vindas
 {
-    cout << "Bem vindo ao curso " << getCourseName() << "!" << endl;
+    cout << "Bem vindo ao curso:\n" << getCourseName() << "!" << endl;
 } // fim função
 
 // cria a função processGrades
-void GradeBook7_23::processGrades() // realiza várias operações de dadgros
+void GradeBook::processGrades() // realiza várias operações de dadgros
 {
     outputGrades(); // gera a saída das notas
 
@@ -50,16 +51,15 @@ void GradeBook7_23::processGrades() // realiza várias operações de dadgros
     cout << "\nA menor nota foi " << getMinimum() << endl;
 
     // chama a função maior valor
-    cout << "A maior nota foi " << getMaximum() << endl;
+    cout << "\nA maior nota foi " << getMaximum() << endl;
 
     // gera saída do gráfico de barras
     outputBarChart();
 
 } // fim função
 
-
 // cria a função getMinimum
-int GradeBook7_23::getMinimum() // localiza a menor nota
+int GradeBook::getMinimum() // localiza a menor nota
 {
     // vaariável
     int lowGrade = 100;
@@ -82,8 +82,8 @@ int GradeBook7_23::getMinimum() // localiza a menor nota
 
 }  // fim função
 
-// cria a função getMaximum
-int getMaximum() // localiza a maior nota
+// cria a função g etMaximum
+int GradeBook::getMaximum() // localiza a maior nota
 {
     // cria variável
     int heighGrade = 0; // para receber a maior nota
@@ -106,6 +106,87 @@ int getMaximum() // localiza a maior nota
 
 } // fim da função get
 
-    double getAverage( const int [], const int ); // calcula a média das notas
-    void outputBarChart(); // gera saída do gráfico de barras das notas
-    void outputGrades(); // gera a saída do conteúdo da matris notas
+// cria a função
+double GradeBook::getAverage( const int setOfGrades[], const int grades ) // calcula a média das notas
+{
+    int total = 0;
+
+    // loop para percorrer a matriz
+    for( int grade = 0; grade < grades; grade++ )
+    {
+        total += setOfGrades[ grade ];
+    } // fim loop for
+
+    return static_cast< double >( total ) / grades;
+
+} // fim função getArerage
+
+// cria a função outputBahart
+void GradeBook::outputBarChart() // gera saída do gráfico de barras das notas
+{
+    cout << "\nDISTRIBUIÇÃO DAS NOTAS" << endl;
+
+    // cria constanteloo
+    const int tamanhoFreq = 11;
+
+    // cria array
+    int frequencia[ tamanhoFreq ] = { 0 };
+
+    //loop para mostrar a frequência
+    for( int student = 0; student = students; student++ )
+    {
+        // loop para a coluna
+        for( int test = 0; test < tests; test++ )
+            // conta a frequência
+            ++frequencia[ grades [student ][ test ] / 10 ];
+    } // fim for externo
+
+    // loop para cada frequência de notas mostra um asterisco
+    for( int conta = 0; conta < tamanhoFreq; conta++ )
+    {
+        // gera a saída
+        if( conta == 0 )
+            cout << "  0-9: ";
+        else if( conta == 10 )
+            cout << "  100: ";
+        else
+            cout << conta * 10 << '-' << (conta * 10 ) + 9 << endl;
+
+        // loop para mostrar o asteriscos
+        for( int stars = 0; stars < frequencia[ conta ]; stars++ )
+        {
+            cout << "*";
+        } // fim for asterisco
+    } // fim for conta
+} // fim função outpurBarChart
+
+// cria função
+void GradeBook::outputGrades() // gera a saída do conteúdo da matris notas
+{
+    // imprima
+    cout << "As notas são:\n\n";
+    cout << "                      ";
+
+    // cria o título da coluna
+    for( int test = 0; test < tests; test++ )
+    {
+        cout << "Testes: " << test + 1 << "  ";
+    } // fim for
+
+    // cria título da média
+    cout << "Average" << endl;
+
+    // cria o título da linha
+    for( int student = 0; student < students; student++ )
+    {
+        cout << "Student " << setw( 2 ) << student + 1;
+
+        // gera saída de notas
+        for( int test = 0; test < tests; test++ )
+            cout << setw( 8 ) << grades[ student ][ test ];
+
+        // chama a função getAverage
+        double average = getAverage( grades[ student ], tests );
+        cout << setw( 9 ) << setprecision( 2 ) << fixed << average << endl;
+    } // fim for externo
+} // fim função getGardes
