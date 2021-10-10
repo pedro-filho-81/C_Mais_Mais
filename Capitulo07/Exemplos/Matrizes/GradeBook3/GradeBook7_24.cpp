@@ -22,7 +22,7 @@ GradeBook::GradeBook( string name, const int gradesArray[][ tests ] )
     //copia notas de gradesArray para grades
     for( int student = 0; student < students; student++ )
         for( int test = 0; test < tests; test++ )
-            grades[ students ][ tests ] = gradesArray[ students ][ tests ];
+            grades[ student ][ test ] = gradesArray[ student ][ test ];
 } // fim construtor GradeBook
 
 // cria a função setCourseName
@@ -80,7 +80,7 @@ int GradeBook::getMinimum() // localiza a menor nota
     // retorna a menor nota
     return lowGrade;
 
-}  // fim função
+}  // fim função getMinimum
 
 // cria a função g etMaximum
 int GradeBook::getMaximum() // localiza a maior nota
@@ -93,12 +93,12 @@ int GradeBook::getMaximum() // localiza a maior nota
     {
         // loop para os testes
         for( int test = 0; test < tests; test++ )
-
+        {
             // se matriz maior que heith
             if( grades[ student ][ test ] > heighGrade )
 
                 heighGrade = grades[ student ][ test ];
-
+        } // fim for interno
     } // fim for externo
 
     // retorne heighGrades
@@ -111,7 +111,7 @@ double GradeBook::getAverage( const int setOfGrades[], const int grades ) // cal
 {
     int total = 0;
 
-    // loop para percorrer a matriz
+    // loop para percorre   r a matriz
     for( int grade = 0; grade < grades; grade++ )
     {
         total += setOfGrades[ grade ];
@@ -128,17 +128,17 @@ void GradeBook::outputBarChart() // gera saída do gráfico de barras das notas
 
     // cria constanteloo
     const int tamanhoFreq = 11;
-
     // cria array
     int frequencia[ tamanhoFreq ] = { 0 };
 
     //loop para mostrar a frequência
-    for( int student = 0; student = students; student++ )
+    for( int student = 0; student < students; student++ )
     {
         // loop para a coluna
         for( int test = 0; test < tests; test++ )
             // conta a frequência
             ++frequencia[ grades [student ][ test ] / 10 ];
+
     } // fim for externo
 
     // loop para cada frequência de notas mostra um asterisco
@@ -150,13 +150,16 @@ void GradeBook::outputBarChart() // gera saída do gráfico de barras das notas
         else if( conta == 10 )
             cout << "  100: ";
         else
-            cout << conta * 10 << '-' << (conta * 10 ) + 9 << endl;
+            cout << conta * 10 << '-' << (conta * 10 ) + 9 << ":  ";
 
         // loop para mostrar o asteriscos
         for( int stars = 0; stars < frequencia[ conta ]; stars++ )
         {
             cout << "*";
         } // fim for asterisco
+
+        cout << endl; // pula uma linha
+
     } // fim for conta
 } // fim função outpurBarChart
 
@@ -165,12 +168,12 @@ void GradeBook::outputGrades() // gera a saída do conteúdo da matris notas
 {
     // imprima
     cout << "As notas são:\n\n";
-    cout << "                      ";
+    cout << "               ";
 
     // cria o título da coluna
     for( int test = 0; test < tests; test++ )
     {
-        cout << "Testes: " << test + 1 << "  ";
+        cout << "Testes:" << test + 1 << "  ";
     } // fim for
 
     // cria título da média
@@ -183,10 +186,10 @@ void GradeBook::outputGrades() // gera a saída do conteúdo da matris notas
 
         // gera saída de notas
         for( int test = 0; test < tests; test++ )
-            cout << setw( 8 ) << grades[ student ][ test ];
+            cout << setw( 10 ) << grades[ student ][ test ];
 
         // chama a função getAverage
         double average = getAverage( grades[ student ], tests );
-        cout << setw( 9 ) << setprecision( 2 ) << fixed << average << endl;
+        cout << setw( 11 ) << setprecision( 2 ) << fixed << average << endl;
     } // fim for externo
 } // fim função getGardes

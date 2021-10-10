@@ -13,6 +13,8 @@ using namespace std;
 
 int main()
 {
+    setlocale( LC_ALL, "portuguese" );
+
     system("cls"); // limpa a tela
 
     // cria a matriz
