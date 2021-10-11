@@ -31,15 +31,15 @@ int main()
     vector< int > integers2( 10 ); // vector< int > integers2 com 10 elementos
 
     // imprime o tamanho e o conteúdo do vetor integers1
-    cout << "O tamanho do vetor integers1 é " << integers1.size()
-            << " Depois da inicialização." << endl;
+    cout << "O tamanho do vetor integers1 é de " << integers1.size()
+            << " Antes da inicialização." << endl;
 
     // chama a função outputVetor
     outputVetor( integers1 );
 
     // imprime o tamanho e o conteúdo do vetor integers2
     cout << "O tamanho do vetor integers2 é "<< integers2.size()
-            << " Depois da inicialização." << endl;
+            << " Antes da inicialização." << endl;
 
     // chama a função outputVetor
     outputVetor( integers2 );
@@ -123,13 +123,15 @@ void outputVetor(const vector< int > &array )
     // loop para mostrar o vetor
     for( i = 0; i < array.size(); i++ )
     {
+        // se multiplo de 4
+        if( (i + 1) % 4 == 0 )
+
+        // pule uma linha
+        cout << endl;
+
         // imprima
         cout << setw( 12 ) << array[ i ];
 
-        // se multiplo de 4
-        if( (i + 1) % 4 == 0 )
-            // pule uma linha
-            cout << endl;
     } // fim for
 
     // se diferente i modulo 4 diferente de zero
