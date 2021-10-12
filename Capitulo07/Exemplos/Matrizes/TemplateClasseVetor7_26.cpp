@@ -9,7 +9,7 @@
 #include <iostream> // para cout e cin
 #include <locale> // para setlocale
 #include <iomanip> // para setw, fixed, setprecision
-#include <vector>
+#include <vector> // para vector
 
 using namespace std;
 
@@ -44,18 +44,15 @@ int main()
     // chama a função outputVetor
     outputVetor( integers2 );
 
-    // imprima
-    cout << "Entre com 17 valores para os vetores: " << endl;
-
     // insere valores inteiros em integers1 e 2
     inputVetor( integers1 );
     inputVetor( integers2 );
 
     // depois de inputVetor
     cout << "\nDepois de inserir valores ao vetor: " << endl;
-    cout << "Integers1: ";
+    cout << "Integers1: " << endl;
     outputVetor( integers1 );
-    cout << "\nIntegers2: ";
+    cout << "\nIntegers2: " << endl;
     outputVetor( integers2 );
 
     // utiliza o operador de diferença ( != ) com objetos vetor
@@ -144,6 +141,9 @@ void outputVetor(const vector< int > &array )
 // cria a função inputVetor
 void inputVetor( vector< int > &array )
 {
+    // imprima
+    cout << "Entre com 17 valores para os vetores: " << endl;
+
     for( size_t i = 0; i < array.size(); i++ )
         cin >> array[ i ];
 } // fim da função inputVetor
