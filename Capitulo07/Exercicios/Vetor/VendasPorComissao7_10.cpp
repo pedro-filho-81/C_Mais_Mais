@@ -65,6 +65,9 @@ void adicionarValores( int vetor[], int tamanho )
     double comissao = 0;
     double salarioAtual = 0;
 
+    // cabeçalho
+    cout << "ENTRADA DE VALORES" << endl;
+
     // loop para adicionar valores ao vetor
     for( i = 0; i < tamanho; i++ )
     {
@@ -103,34 +106,31 @@ void mostrarValores( int vetor[], int tamanho )
 // cria a função outputBahart
 void barraDeAsterisco( int vetor[], int tamanho ) // gera saída do gráfico de barras das notas
 {
-    cout << "\nDISTRIBUIÇÃO DAS NOTAS" << endl;
+    cout << "\nDISTRIBUIÇÃO DOS VALORES" << endl;
 
     // cria constanteloo
-    const int tamanhoFreq = 10;
+    const int tamanhoFreq = 11;
 
     // cria array
     int frequencia[ tamanhoFreq ] = { 0 };
 
     // loop para a coluna
-    for( int i = 0; i < tamanho; i++ )
+    for( int i = 0; i < tamanhoFreq; i++ )
         // conta a frequência
         ++frequencia[ vetor[ i ] / 100 ];
 
     // loop para cada frequência de notas mostra um asterisco
     for( int conta = 0; conta < tamanhoFreq; conta++ )
     {
-        // gera a saída
-        if( conta == 0 )
-            cout << "  R$ 200 - R$ 299: ";
-        else if( conta == 10 )
+        if( conta == 10 )
             cout << "          R$ 1000: ";
         else
-            cout << "  R$ " << conta * 100<< " -" << " R$ " << (conta * 100 ) + 99 << ":  ";
+            cout << "  R$ " << ( conta ) * 100 << " -" << " R$ " << ( ( conta ) * 100 ) + 99 << ":  ";
 
         // loop para mostrar o asteriscos
         for( int stars = 0; stars < frequencia[ conta ]; stars++ )
         {
-            cout << "* ";
+            cout << "*";
         } // fim for asterisco
 
         cout << endl; // pula uma linha
