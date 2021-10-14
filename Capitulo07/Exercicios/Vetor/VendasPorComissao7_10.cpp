@@ -19,8 +19,9 @@
 using namespace std;
 
 // protótipos
-void adicionarValores( int, double, double );
-void mostrarValores( double, int, double, double, double )
+void adicionarValores( int [], int );
+void mostrarValores( int [], int );
+void barraDeAsterisco( int [], int ); // gera saída do gráfico de barras das notas
 
 // função principal
 int main()
@@ -34,25 +35,15 @@ int main()
     // variável
     const int tamanho = 10;
 
-    // constante
-    const double salarioFixo = 200;
-
     // array
-    double pagaDoPessoal[ tamanho ] = { 0 };
-    double vendasBrutas = 0;
-    double comissao = 0;
-    double salarioTotal = 0;
-    int vendedor = 0;
+    int pagamentoPessoal[ tamanho ];
 
-    cout << "Valor das vendas brutas: ";
-    cin >> vendasBrutas;
-
-    // calcular
-    comissao = ( vendasBrutas * 9 ) / 100;
-    salarioTotal = salarioFixo + comissao;
-
-    // chama a função adicionarValores
-    adicionarValores( pagaDoPessoal, tamanho, vendasBrutas, comissao, salarioTotal );
+    // chama a função adicionar valores
+    adicionarValores( pagamentoPessoal, tamanho );
+    // chama a função mostrar valores
+    mostrarValores( pagamentoPessoal, tamanho );
+    // chama a função barra de asterisco
+    barraDeAsterisco( pagamentoPessoal, tamanho );
 
     // pula linha
     cout << endl;
@@ -64,12 +55,85 @@ int main()
 } // fim main
 
 // adicionarValores
-void adicionarValores( double vetor, int tamanho, double salario )
+void adicionarValores( int vetor[], int tamanho )
 {
+    const int salarioFixo = 200;
+
+    // variáveis
     size_t i;
+    double totalDasVendas = 0;
+    double comissao = 0;
+    double salarioAtual = 0;
 
-    // loop para adicionar valores
+    // loop para adicionar valores ao vetor
     for( i = 0; i < tamanho; i++ )
-        vetor[ i ] = salario;
+    {
+        // entrada de dados
+        cout << "Vendedor " << i + 1 << " total das vendas: R$ ";
+        cin >> totalDasVendas;
 
+        // calcular a comissão e salário atual
+        comissao = totalDasVendas * 9 / 100;
+        salarioAtual = salarioFixo + comissao;
+
+        // vetor recebe o valor do salário atual dos vendedores
+        vetor[ i ] = salarioAtual;
+
+    } // fim for
 } // fim da função adicionarValores
+
+// cria a função mostrarValores
+void mostrarValores( int vetor[], int tamanho )
+{
+    // configuração
+    cout << fixed << setprecision( 2 ); // duas casas decimais
+
+    // cabeçalho
+    cout << "\nFOLHA DE PAGAMENTO" << endl;
+
+    // loop linha
+    for( int linha = 0; linha < tamanho; linha++ )
+    {
+        // imprime o vendedor
+        cout << "Vendedor " << setw( 3 ) << linha + 1
+                << setw( 5 ) << "R$ " << setw( 7 ) << vetor[ linha ] << endl;
+    } // fim for linha
+} // fim função
+
+// cria a função outputBahart
+void barraDeAsterisco( int vetor[], int tamanho ) // gera saída do gráfico de barras das notas
+{
+    cout << "\nDISTRIBUIÇÃO DAS NOTAS" << endl;
+
+    // cria constanteloo
+    const int tamanhoFreq = 10;
+
+    // cria array
+    int frequencia[ tamanhoFreq ] = { 0 };
+
+    // loop para a coluna
+    for( int i = 0; i < tamanho; i++ )
+        // conta a frequência
+        ++frequencia[ vetor[ i ] / 100 ];
+
+    // loop para cada frequência de notas mostra um asterisco
+    for( int conta = 0; conta < tamanhoFreq; conta++ )
+    {
+        // gera a saída
+        if( conta == 0 )
+            cout << "  R$ 200 - R$ 299: ";
+        else if( conta == 10 )
+            cout << "          R$ 1000: ";
+        else
+            cout << "  R$ " << conta * 100<< " -" << " R$ " << (conta * 100 ) + 99 << ":  ";
+
+        // loop para mostrar o asteriscos
+        for( int stars = 0; stars < frequencia[ conta ]; stars++ )
+        {
+            cout << "* ";
+        } // fim for asterisco
+
+        cout << endl; // pula uma linha
+
+    } // fim for conta
+} // fim função outpurBarChart
