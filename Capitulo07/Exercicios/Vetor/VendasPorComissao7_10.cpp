@@ -21,7 +21,7 @@ using namespace std;
 // protótipos
 void adicionarValores( int [], int );
 void mostrarValores( int [], int );
-void barraDeAsterisco( int [], int ); // gera saída do gráfico de barras das notas
+void geraBarraAsterisco( int [], int ); // gera saída do gráfico de barras dos valores
 
 // função principal
 int main()
@@ -43,7 +43,7 @@ int main()
     // chama a função mostrar valores
     mostrarValores( pagamentoPessoal, tamanho );
     // chama a função barra de asterisco
-    barraDeAsterisco( pagamentoPessoal, tamanho );
+    geraBarraAsterisco( pagamentoPessoal, tamanho );
 
     // pula linha
     cout << endl;
@@ -103,37 +103,65 @@ void mostrarValores( int vetor[], int tamanho )
     } // fim for linha
 } // fim função
 
-// cria a função outputBahart
-void barraDeAsterisco( int vetor[], int tamanho ) // gera saída do gráfico de barras das notas
+// cria a função geraBarraAsterisco
+void geraBarraAsterisco( int vetor[], int tamanho )
 {
-    cout << "\nDISTRIBUIÇÃO DOS VALORES" << endl;
+    // cabeçalho
+    cout << "\nGERA BARRA DE ASTERISCO" << endl;
 
-    // cria constanteloo
-    const int tamanhoFreq = 11;
+    // constante
+    const int tamanhoFrequecia = 11;
+    // cria vetor frequência
+    int frequencia[ tamanhoFrequecia ] = { 0 };
 
-    // cria array
-    int frequencia[ tamanhoFreq ] = { 0 };
+    // para cada valor incrementa a frequência apropriada
+    for( int i = 0; i < tamanho; i++ )
+        // incrementa a frequência
+        frequencia[ vetor[ i ]  / 100 ]++;
 
-    // loop para a coluna
-    for( int i = 0; i < tamanhoFreq; i++ )
-        // conta a frequência
-        ++frequencia[ vetor[ i ] / 100 ];
-
-    // loop para cada frequência de notas mostra um asterisco
-    for( int conta = 0; conta < tamanhoFreq; conta++ )
+    // loop para cada frequência do valor mostrar gráfico de barras
+    for( int contar = 0; contar < tamanhoFrequecia; contar++ )
     {
-        if( conta == 10 )
-            cout << "          R$ 1000: ";
-        else
-            cout << "  R$ " << ( conta ) * 100 << " -" << " R$ " << ( ( conta ) * 100 ) + 99 << ":  ";
-
-        // loop para mostrar o asteriscos
-        for( int stars = 0; stars < frequencia[ conta ]; stars++ )
+        // GERA A SAÍDA DO GRÁFICO DE BARRAS
+        // se j igual a zero
+        if( contar == 0 )
         {
-            cout << "*";
-        } // fim for asterisco
+            // imprima
+            cout << "R$ 200 - R$ 299:  ";
+        } // fim if
 
-        cout << endl; // pula uma linha
+        // se não se j igual a 10
+        else if( contar == 10 )
+        {
+            // imprima
+            cout << "R$ 1000 ou mais:  ";
 
-    } // fim for conta
-} // fim função outpurBarChart
+            // loop para pesquisar no vetor valores iguais ou maiores que 1100
+            for( int mil = 0; mil < tamanho; mil++ )
+                // se o vetor tiver valor maior ou igual a 1100
+                if( vetor[ mil ] >= 1100 )
+                    // imprima
+                    cout << "* ";
+
+        } // fim else if
+        else
+        {
+            if( contar > 2 )
+                // imprima
+                cout << "R$ " << contar * 100 << " - R$ " << ( contar * 100 ) + 99 << ":  ";
+        } // fim else
+
+        // loop para mostrar o gráfico de barras
+        for( int asterisco = 0; asterisco < frequencia[ contar ]; asterisco++ )
+        {
+            // imprima
+            cout << "* ";
+        } // fim for
+
+        // se contar maior que 2
+        if( contar > 1 )
+            cout << endl; // pule uma linha
+
+    } // fim for externo
+
+} // fim função geraBarraAsterisco
