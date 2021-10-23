@@ -20,7 +20,6 @@ int main()
 
     // cria um vetor do tipo double sem elementos
     vector<double> vetor;
-    int valor;
 
     // header
     cout << "ADICIONA VALORES COM PUSH_BACK" << endl;
@@ -34,7 +33,6 @@ int main()
         vetor.push_back(valor);
     } // endl for
 
-    cout << "Você adicionou " << valor << endl;
     // loop para percorrer os valores do vetor
     for( double valor : vetor )
         // imprime os valores do vetor

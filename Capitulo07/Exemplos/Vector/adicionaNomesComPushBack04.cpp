@@ -20,8 +20,8 @@ int main()
 
     // create vector
     vector < string > nomes;
-    string palavras;
-    int valor;
+    string palavras; // to data input
+    int valor; // to loop for
 
     // data input
     cout << ( "Digite um nome: " );

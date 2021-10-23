@@ -5,8 +5,8 @@
 
 #include <iostream>
 #include <locale>
+#include <algorithm>
 #include <vector>
-#include <cstdlib>
 
 using namespace std;
 
@@ -41,10 +41,11 @@ int main()
     for( int value : number )
         cout << value << " "; // show elements
 
-//    sort( number );
+     // organiza o vetor número
+     sort( number.begin(), number.end() );
 
     // mostra o vetor organizado
-    cout << "number organizado = ";
+    cout << "\nnumber organizado = ";
 
     // loop to show vector elements
     for( int value : number )

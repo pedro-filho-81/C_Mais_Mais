@@ -22,7 +22,7 @@ int main()
 
     // data input
     cout << "Digite o valor da temperatura: ";
-    // loop para add value to vector
+    // loop to add value to vector
     for( double valor; cin>> valor; ) // read into temperatura
         temperatura.push_back( valor ); // put temperatura into vector
 
