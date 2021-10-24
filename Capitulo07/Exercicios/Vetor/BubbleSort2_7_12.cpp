@@ -72,9 +72,9 @@ void bubbleSort( int vetor[], int tamanho )
 
     // loop para organizar vetor em ordem crescente ou
     // decrescente ( basta inverter sinal de > para < )
-    for( int maior = 0; maior < tamanho -1; maior++ )
+    for( int maior = 0; maior < tamanho; maior++ )
     {
-        for( int menor = 0; menor < tamanho -1; menor++ )
+        for( int menor = 0; menor < tamanho; menor++ )
         {
             // se o valor do vetor menor for maior que o valor vetor maior
             if( vetor[ menor ] > vetor[ maior ] )
