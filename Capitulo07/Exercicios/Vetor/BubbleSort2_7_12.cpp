@@ -17,9 +17,17 @@
     Autor: Pedri Filho 23/10/2021
 */
 
-#include <iostream>
-#include <locale>
-#include
+// incluir biblioteca
+#include <iostream> // para cout e cin
+#include <locale> // para setlocale
+#include <iomanip> // para setw, fixed, setprecision
+#define TAMANHO 10
+
+using namespace std;
+
+// protótipos
+void bubbleSort( int [], int ); // organizador do vetor
+void mostrarValores(const int [], int ); // mostra os valores do vetor
 
 // função principal
 int main()
@@ -30,8 +38,64 @@ int main()
     // limpa a tela
     system("cls");
 
+    // cria o vetor
+    int numeros[ TAMANHO ] = { 9, 5, 7, 1, 4, 3, 6, 8, 0, 2 };
+
+    cout << "Vetor original: "; // início
+    // loop para mostrar o vetor original
+    for( int i = 0; i < TAMANHO; i++ )
+        cout << numeros[ i ] << " "; // imprime o vetor
+    cout << endl; // pula linha
+
+    // organiza o vetor
+    bubbleSort( numeros, TAMANHO );
+
+    cout << "Vetor ordenado = { ";
+    // chama a função mostrar valores
+    mostrarValores( numeros, TAMANHO );
+    cout << " };" << endl;
+
+    // pula linha
+    cout << endl;
+
     system("pause"); // pausa do programa
 
     return 0; // programa terminado com sucesso
 
 } // fim main
+
+// cria a função bubbleSort
+void bubbleSort( int vetor[], int tamanho )
+{
+    // cria variável
+    int auxiliar = 0;
+
+    // loop para organizar vetor em ordem crescente ou
+    // decrescente ( basta inverter sinal de > para < )
+    for( int maior = 0; maior < tamanho -1; maior++ )
+    {
+        for( int menor = 0; menor < tamanho -1; menor++ )
+        {
+            // se o valor do vetor menor for maior que o valor vetor maior
+            if( vetor[ menor ] > vetor[ maior ] )
+            {
+                // auxiliar recebe o valor do vetor maior
+                auxiliar = vetor[ maior ];
+                // vetor maior recebe o valor do vetor menor
+                vetor[ maior ] = vetor[ menor ];
+                // vetor menor recebe o valor do auxiliar
+                vetor[ menor ] = auxiliar;
+            } // fim if
+        } // fim for interno
+    } // fim for externo
+} // fim função bubbleSort
+
+// cria vetor mostrarValores
+void mostrarValores( const int vetor[], int tamanho )
+{
+    // loop para mostra os valores do vetor
+    for( int valor = 0; valor < tamanho; valor++ )
+    {
+        cout << vetor[ valor ] << " ";
+    } // fim for valor
+} // fim função mostrarValores
