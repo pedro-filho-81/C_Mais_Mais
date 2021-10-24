@@ -59,8 +59,8 @@ int main()
 
     // create variable
     double soma = 0; // soma os valores do vetor
-    double maior = vetor[ 0 ]; // para o maior valor do vetor
-    double menor = vetor[ 0 ]; // para o menor valor do vetor
+    double maior = vetor[ 0 ]; // inicializa variável com o valor do vetor 0
+    double menor = vetor[ 0 ]; // inicializa variável com o valor do vetor 0
 
     // loop pelos valores do vetor
     for( double valor : vetor )
