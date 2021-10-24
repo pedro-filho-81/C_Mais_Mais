@@ -6,7 +6,9 @@
 #include <iostream>
 #include <locale>
 #include <vector>
-#include <string>
+#include <algorithm>
+
+using namespace std;
 
 // função principal
 int main()
@@ -22,7 +24,7 @@ int main()
     for (string temp; cin >> temp;) // ler palavras separadas por espaços em branco
         palavras.push_back (temp); // coloca palavras no vetor
 
-    cout << "Número de palavras:" << palavras.size () << '\ n';
+    cout << "Número de palavras:" << palavras.size () << endl;
 
     sort( palavras.begin(), palavras.end() ); // classifica as palavras
 
