@@ -1,6 +1,6 @@
 /*
-
-    Autor:
+    cria um dicionário simples, evita nomes repetidos
+    Autor: 24/10/2021
 */
 
 #include <iostream>
