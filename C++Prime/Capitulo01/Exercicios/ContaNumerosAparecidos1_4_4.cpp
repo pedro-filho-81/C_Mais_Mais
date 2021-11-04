@@ -19,8 +19,11 @@ int main()
     int contaValor = 1;
     int valor = 0;
     int conta = 0;
+
+    cout << "Digite um número inteiro: ";
     if( cin >> contaValor )
         conta = 1;
+
     cout << "Digite um número inteiro: ";
     while( cin >> valor )
     {
