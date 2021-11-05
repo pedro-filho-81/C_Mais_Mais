@@ -25,9 +25,13 @@ int main()
     cin >> primeiroNome; // read characters into firstName
     cin >> segundoNome; // read characters into secondName
 
-    // or cin >> primeiroNome >> segundoNome; read characters into firstName and secondName
+    // cin >> primeiroNome >> segundoNome; read characters into firstName and secondName
 
+    // mostra uma das maneiras de im-rimir o primeiro e o segundo nome
     cout << "Olá, " << primeiroNome << " " << segundoNome << "!" << endl;
+
+    // mostra como imprimir usando o sinal de [ + ] exemplo de concatenação
+    cout << "Olá, " << primeiroNome + segundoNome << "!" << endl;
 
     system("pause"); // pausa do programa
 
