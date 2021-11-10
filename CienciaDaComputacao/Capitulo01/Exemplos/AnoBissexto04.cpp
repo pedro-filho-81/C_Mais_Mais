@@ -31,8 +31,11 @@ int main()
 
     // calcular
     anoBissexto = (pesquisarAno % 4 == 0 );
+    cout << "anoBissexto = (pesquisarAno % 4 == 0 ); " << anoBissexto << endl;
     anoBissexto = anoBissexto && (pesquisarAno % 100 != 0 );
+    cout << "anoBissexto = anoBissexto && (pesquisarAno % 100 != 0 );" << anoBissexto << endl;
     anoBissexto = anoBissexto || (pesquisarAno % 400 == 0 );
+    cout << "anoBissexto = anoBissexto || (pesquisarAno % 400 == 0 );" << anoBissexto << endl;
 
     // se a resposta for 1
     if( anoBissexto == 1 )
