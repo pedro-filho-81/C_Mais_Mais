@@ -19,6 +19,7 @@ int main()
 
     srand( time( NULL) );
 
+    // gera um número entre 0 e 4 inclusive
     cout << rand() % 5 << " ";
 
     system("pause"); // pausa do programa
