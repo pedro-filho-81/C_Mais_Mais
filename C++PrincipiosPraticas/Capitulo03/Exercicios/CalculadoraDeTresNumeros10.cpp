@@ -48,7 +48,6 @@ int main()
     if( operacao == '*' )
         cout << num1 << " * " << num2 << " = " << num1 * num2 << endl;
 
-
     system("pause"); // pausa do programa
 
     return 0; // programa terminado com sucesso
