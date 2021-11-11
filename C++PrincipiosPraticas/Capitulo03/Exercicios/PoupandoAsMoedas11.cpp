@@ -53,6 +53,8 @@ int main()
     cout << "Quanto você tem de moedas? R$ ";
     cin >> valorTotal;
 
+    valorTotal /= 100;
+
     if(valorTotal >= 1 )
     {
         contaUmReal = static_cast< int> (valorTotal) * 1;
