@@ -29,8 +29,7 @@ int main()
     // limpa a tela
     system("cls");
 
-    double valorDaMOeda = 0.0;
-    string tipoDaMoeda = " ";
+    double valorTotal = 0.0;
     int contaUmReal = 0;
     int contaCinquentaCent = 0;
     int contaVinteCincoCent = 0;
@@ -51,10 +50,49 @@ int main()
     cout << "\t*****************" << endl;
 
     // entrada de dados
-    cout << "Colocando moedas no porquinho R$ ";
-    cin >> valorDaMOeda;
+    cout << "Quanto você tem de moedas? R$ ";
+    cin >> valorTotal;
 
-    cout << "R$ " << valorDaMOeda << endl;
+    if(valorTotal >= 1 )
+    {
+        contaUmReal = static_cast< int> (valorTotal) * 1;
+        cout << "Você tem " << contaUmReal << " moedas de R$ 1,00" << endl;
+        valorTotal -= contaUmReal;
+    } // fim if
+
+    if(valorTotal < 1 && valorTotal >= 0.50 )
+    {
+        valorTotal -= 0.50;
+        cout << "Você tem " << 1 << " moedas de R$ 0,50" << endl;
+    } // fim if
+
+    if( valorTotal < 0.50 && valorTotal >= 0.25 )
+    {
+        valorTotal -= 0.25;
+        cout << "Você tem " << 1 << " moedas de R$ 0,25" << endl;
+    } // fim if
+
+    if(valorTotal < 0.50 && valorTotal >= 0.10 )
+    {
+        contaDezCent = (valorTotal * 10);
+        cout << "Você tem " << contaDezCent << " moedas de R$ 0,10" << endl;
+        valorTotal -= 0.10 * contaDezCent;
+    } // fim
+
+    if(valorTotal < 0.10 && valorTotal >= 0.05 )
+    {
+        contaCincoCent = (valorTotal * 10);
+        cout << "Você tem " << 1 << " moedas de R$ 0,05" << endl;
+        valorTotal -= 0.05;
+    } // fim if
+
+    if(valorTotal < 0.05 && valorTotal > 0.01 )
+    {
+        cout << "Você tem " << valorTotal * 100 << " moedas de R$ 0,01" << endl;
+        valorTotal = 0.0;
+    } // fim
+
+    cout << "R$ " << valorTotal << endl;
 
     system("pause"); // pausa do programa
 
