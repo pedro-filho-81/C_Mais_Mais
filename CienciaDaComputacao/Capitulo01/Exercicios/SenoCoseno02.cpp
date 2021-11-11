@@ -20,6 +20,11 @@ int main()
     // limpa a tela
     system("cls");
 
+    double seno = sin( 0 );
+    double coseco = cos( 0 );
+
+    cout << seno << " + " << coseco << " = " << seno + coseco << endl;
+
     system("pause"); // pausa do programa
 
     return 0; // programa terminado com sucesso
