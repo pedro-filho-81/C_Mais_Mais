@@ -12,6 +12,8 @@
     ou atingir $ goal. O tempo de execução deste programa é proporcional
     às tentativas vezes o número médio de apostas. Por exemplo, o terceiro
     comando abaixo faz com que quase 100 milhões de números aleatórios sejam gerados.
+    Sedgewick, Robert; Wayne, Kevin. Computer Science (p. 71).
+    Pearson Education. Edição do Kindle.
     15/11/2021
 */
 
@@ -51,6 +53,7 @@ int main()
 
     srand( time( 0 ) ); // semente do aleatório
 
+    // loop for repete x tentativas
     for(int t = 0; t < tentativas; t ++)
     {
         int dinheiro = valorDaAposta;
