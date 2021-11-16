@@ -1,7 +1,7 @@
 /*
-    aposta | aposta inicial
-    objetivo | gol de walkaway
-    ensaios | número de tentativas
+    aposta | valor da aposta
+    objetivo | quanto quer ganhar
+    ensaios | tentativas
     apostas | contagem de aposta
     vitórias | contagem de vitórias
     dinheiro | dinheiro na mão

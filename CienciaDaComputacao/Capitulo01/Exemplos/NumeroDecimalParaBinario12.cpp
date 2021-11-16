@@ -26,7 +26,6 @@ int main()
 
     // Imprime a representação binária de n.
     int num;
-
     int potencia = 1;
 
     // entrada de dados
