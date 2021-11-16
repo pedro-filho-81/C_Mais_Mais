@@ -31,7 +31,7 @@ int main()
 
     srand( time( 0 ) ); // gera semente aleatória
 
-    // condição se x < y
+    // condição se x menor que y
     if( x < y )
         alea = x + rand() % y; // alea recebe um valor entre x e y
     else // se não
