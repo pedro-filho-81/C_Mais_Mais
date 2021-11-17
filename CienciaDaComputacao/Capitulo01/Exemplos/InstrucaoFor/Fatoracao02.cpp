@@ -5,6 +5,7 @@
 
 #include <iostream>
 #include <locale>
+#include <iomanip>
 
 using namespace std;
 
@@ -22,14 +23,22 @@ int main()
     cout << "Digite um valor para fatorar: ";
     cin >> num;
 
+    // se o número for para
+    if( num % 2 == 0 )
+        // imprima
+        cout << num << " / " << 2 << " = " << num / 2 << endl;
+
+    cout << "FATORAÇÃO DO NÚMERO " << num << endl;
+
     // loop para fatoração
     for( fator = 2; fator <= num / fator; fator++ )
     {
         while( num % fator == 0 )
         {
             num /= fator;
-            cout << num << " / " << fator << endl;
+            cout << setw( 5 ) << num << " / " << fator << endl;
         } // fim while
+
     } // fim for
 
     if( num > 1 )
