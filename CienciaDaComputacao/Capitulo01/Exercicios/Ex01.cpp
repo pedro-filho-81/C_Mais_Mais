@@ -25,6 +25,10 @@ int main()
 
     cout << "a = " << a << "b = " << b << "t = " << t << endl;
 
+    double x = 1;
+    double y = 3;
+    cout << x / y << endl;
+
     system("pause"); // pausa do programa
 
     return 0; // programa terminado com sucesso
