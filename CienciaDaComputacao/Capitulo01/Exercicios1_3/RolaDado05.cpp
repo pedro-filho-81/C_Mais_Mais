@@ -30,7 +30,7 @@ int main()
     else if( r < 2 ) rolar = 2;
     else if( r < 3 ) rolar = 3;
     else if( r < 4 ) rolar = 4;
-    else if( r < 5 ) rolar = 5;
+    else if( r < 5  ) rolar = 5;
     else rolar = 6;
 
     cout << "Rolar = " << rolar << endl;
