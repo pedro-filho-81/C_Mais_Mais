@@ -24,7 +24,8 @@ int main()
 
     // cria o menu
     cout << "-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=" << endl;
-    cout << "*      1 => Olá, Mundo!        *" << endl;
+    cout << "*      1 => OláMundo!        *" << endl;
+    cout << "*      2 => cout-imprimir    *" << endl;
     cout << "-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=" << endl;
     cout << "Quer ajuda sobre: ";
     cin >> opcaoMenu;
@@ -48,8 +49,8 @@ int main()
             cout << "\nMensagem gerada pelo compilador após return = 0;\n"
                     << "Process returned 0 (0x0)   execution time : 11.247 s" << endl;
             cout << endl; // pula uma linha
+            break; // fim switch
 
-            break;
         case 2:
             cout << "Variável - Nome dado ao espaço da memória"
                     << " do computador onde será armazenado \"um valor\"." << endl;
