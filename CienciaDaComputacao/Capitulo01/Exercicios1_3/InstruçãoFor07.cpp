@@ -9,7 +9,7 @@
 
     Sedgewick, Robert; Wayne, Kevin. Ciência da Computação (p. 81).
     Pearson Education. Edição do Kindle.
-    Feito por: Pedro Filho, 09/11/2021
+    Feito por: Pedro Filho, 19/11/2021
 */
 
 #include <iostream>
