@@ -24,7 +24,6 @@ int main()
 
     // entrada de dados
     cout << "Digite quantos elementos quer no vetor: ";
-
     cin >> num; // aguarda a entrada de dados do usuário
 
     int vetor[ num ]; // cria um vetor com n elementos
