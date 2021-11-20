@@ -38,16 +38,19 @@ int main()
     {
         vetor1[ i ] = 1 + rand() % 10; // vetor1 recebe valores entre 1 e 50 inclusive
 
-        vetor2[ i ] = 1 + rand() % 10; // vetor2 recebe valores entre 1 e 50 inclusive
+        vetor2[ i ] = 1 + rand() % 10; // vetor2 recebevtrvalores entre 1 e 50 inclusive
     } // fim for
+
+    cout << setw(7) << "vtr01" << setw(7) << "vtr02"
+            << setw(10) << "01vtr02" << setw(5) << "soma" << endl;
 
     // mostra os valores dos vetores
     for( int i = 0; i < tamanho; i++ )
     {
         soma += vetor1[ i ] * vetor2[ i ]; // soma o produto dos valores dos vetores 1 e 2
 
-        cout << setw( 5 ) << vetor1[ i ] << setw( 5 ) << vetor2[ i ]
-                << setw( 5 ) << vetor1[ i ] * vetor2[ i ] << setw( 7 ) << soma << endl;
+        cout << setw( 7 ) << vetor1[ i ] << setw( 7 ) << vetor2[ i ]
+                << setw( 7 ) << vetor1[ i ] * vetor2[ i ] << setw( 7 ) << soma << endl;
     }
 
     cout << endl; // pula uma linha
