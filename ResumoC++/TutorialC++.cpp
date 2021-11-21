@@ -1,7 +1,7 @@
 /*
-    Criar um resumo da linguagem de programação C++ para auxiliar o aprendizado.
+    Criar um resumo da linguagem de programação C++ para auxiliar meu aprendizado.
     Os detalhes serão vistos com a execução do programa.
-    As melhoria virão com o melhor conhecimento da linquagem.
+    As melhorias virão com o melhor conhecimento da mesma.
     Feito por: Pedro Filho, início do projeto: 18/11/2021
 */
 
@@ -25,8 +25,9 @@ int main()
 
     // cria o menu; futuramente tutorial feito HTML - CSS - JAVASCRIPT.
     cout << "-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=" << endl;
-    cout << "*      1 => OláMundo!        *" << endl;
-    cout << "*      2 => cout-imprimir    *" << endl;
+    cout << "*      1 => Por Que C++ *" << endl;
+    cout << "*      2 => OláMundo!        *" << endl;
+    cout << "*      3 => cout-imprimir    *" << endl;
     cout << "-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=" << endl;
     cout << "Quer ajuda sobre: ";
     cin >> opcaoMenu;
@@ -35,6 +36,24 @@ int main()
     switch( opcaoMenu )
     {
         case 1:
+            cout << "Por Que C++." << endl;
+            cout << "\tQuando tinha uns 20 / 25 anos conheci a linguagem C." << endl;
+            cout << "Através do livro C completo e total,\nNão passei das primeiras páginas." << endl;
+            cout << "Hoje, escolhi a linguagem C++ por esses motivos:" << endl;
+            cout << "C ++ é uma linguagem de programação popular." << endl;
+            cout << "C ++ é usado para criar programas de computador." << endl;
+            cout << "" << endl;
+            cout << " " << endl;
+            cout << "" << endl;
+            cout << "" << endl;
+            cout << "" << endl;
+            cout << "" << endl;
+            cout << "" << endl;
+            cout << "" << endl;
+            cout << "" << endl;
+            break; // sair do switch
+
+        case 2:
             cout << "\nPrimeiro programa em C++\n" << endl;
             cout << "// => barra barra ==> significa comentário de uma linha.\n" << endl;
             cout << "\t// OBRIGATÓRIO incluir biblioteca de entrada e saída\n" << endl;
@@ -52,7 +71,7 @@ int main()
             cout << endl; // pula uma linha
             break; // fim switch
 
-        case 2:
+        case 3:
             cout << "Variável - Nome dado ao espaço da memória"
                     << " do computador onde será armazenado \"um valor\"." << endl;
             cout << "Toda variável em C++ tem um TIPO e um NOME." << endl;
