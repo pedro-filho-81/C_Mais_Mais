@@ -7,6 +7,7 @@
 
 using namespace std;
 
+// A função declarada no início serve como protótipo
 inline double cubo( const double valor)
 {
     return valor * valor * valor;
