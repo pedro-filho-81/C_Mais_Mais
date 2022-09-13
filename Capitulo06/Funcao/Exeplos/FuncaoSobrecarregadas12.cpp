@@ -21,8 +21,8 @@ int main()
 {
     setlocale(LC_ALL, "Portuguese");
 
-    cout << "Valor inteiro 7 = " << quadrado( 7 ) << endl;
-    cout << "\nValor real 10,5 = " << quadrado(10.5) << endl;
+    cout << "O quadrado de 7 = " << quadrado( 7 ) << endl;
+    cout << "\nO quadrado de 7,5 = " << quadrado(7.5) << endl;
 
     system("pause"); // pausa do programa
 
